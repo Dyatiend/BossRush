@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28502667, g: 0.37139323, b: 0.49600998, a: 1}
+  m_IndirectSpecularColor: {r: 0.2850265, g: 0.3713928, b: 0.49600852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -279,15 +279,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 625892b825cd76d41a495a78d118c144, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.1397822
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 625892b825cd76d41a495a78d118c144, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.49999976
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 625892b825cd76d41a495a78d118c144, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.1354628
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 625892b825cd76d41a495a78d118c144, type: 3}
       propertyPath: m_LocalRotation.w
@@ -374,8 +374,32 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!4 &1668404844 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 625892b825cd76d41a495a78d118c144, type: 3}
+  m_PrefabInstance: {fileID: 1607321254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1668404845
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668404840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64062dbf6cb04477f9db3e2d4b584b69, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f638b35ffc4be304da00341bb07028be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1899928799}
+  playerTransform: {fileID: 1668404844}
   lookAtPlayer: 0
   SmoothFactor: 1
 --- !u!20 &1687258584
@@ -530,7 +554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400236, guid: c17302b294b179d45afeabff23af8b13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.79
       objectReference: {fileID: 0}
     - target: {fileID: 400236, guid: c17302b294b179d45afeabff23af8b13, type: 3}
       propertyPath: m_LocalPosition.y
@@ -613,11 +637,6 @@ CapsuleCollider:
   m_Height: 1.75
   m_Direction: 1
   m_Center: {x: 0, y: 0.85, z: 0}
---- !u!4 &1899928799 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400236, guid: c17302b294b179d45afeabff23af8b13, type: 3}
-  m_PrefabInstance: {fileID: 1899928794}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2138677391
 GameObject:
   m_ObjectHideFlags: 0
