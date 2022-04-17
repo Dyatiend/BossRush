@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     public int Speed;
+    public int TimeDestroy;
     Vector3 lastPos;
 
     // Start is called before the first frame update
@@ -28,6 +29,8 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         lastPos = transform.position;
+
+        Destroy(gameObject, TimeDestroy);
         
     }
 }

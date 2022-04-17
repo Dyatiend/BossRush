@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    public Transform shotPoint;
     public float moveSpeed;
     public float rotationSpeed;
     public float walkAnimationSpeed;
@@ -13,6 +14,8 @@ public class Controller : MonoBehaviour
     private Animator animator;
 
     public GameObject camera;
+
+    public GameObject bullet;
 
     public float jumpForce;
 
@@ -34,6 +37,28 @@ public class Controller : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+        }
+
+        Shoot();
+    }
+
+    void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            animator.SetTrigger("Jump");
+            Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+            // if (Random.Range(0, 5) == 1)
+            // {
+            //     lasers[Random.Range(0, 2)].SetActive(true);
+            //     PlaySound();
+               
+            // }
+            // else
+            // {
+            //     lasers[0].SetActive(false);
+            //     lasers[1].SetActive(false);
+            // }
         }
     }
 
