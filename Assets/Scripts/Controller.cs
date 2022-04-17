@@ -5,6 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public Transform shotPoint;
+    public Transform laser;
     public float moveSpeed;
     public float rotationSpeed;
     public float walkAnimationSpeed;
@@ -47,12 +48,14 @@ public class Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             animator.SetTrigger("Jump");
+            
+            transform.LookAt(laser);
             Instantiate(bullet, shotPoint.position, shotPoint.rotation);
             // if (Random.Range(0, 5) == 1)
             // {
             //     lasers[Random.Range(0, 2)].SetActive(true);
             //     PlaySound();
-               
+
             // }
             // else
             // {
