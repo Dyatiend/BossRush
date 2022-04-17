@@ -48,20 +48,15 @@ public class Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             animator.SetTrigger("Jump");
-            
-            transform.LookAt(laser);
-            Instantiate(bullet, shotPoint.position, shotPoint.rotation);
-            // if (Random.Range(0, 5) == 1)
-            // {
-            //     lasers[Random.Range(0, 2)].SetActive(true);
-            //     PlaySound();
 
-            // }
-            // else
-            // {
-            //     lasers[0].SetActive(false);
-            //     lasers[1].SetActive(false);
-            // }
+            Vector3 forward = laser.transform.position - transform.position;
+            Vector3 upward = Vector3.up;
+
+            Quaternion newRotation = Quaternion.LookRotation(forward, upward);
+            newRotation.z = 0.0f;
+            newRotation.x = 0.0f;
+            transform.rotation = newRotation;
+            Instantiate(bullet, shotPoint.position, shotPoint.rotation);
         }
     }
 

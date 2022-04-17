@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28502697, g: 0.37139347, b: 0.49601266, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502667, g: 0.37139323, b: 0.49600998, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5747ff1d4bf1e9a4abb8c44478d63da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1000
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,11 +366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 625892b825cd76d41a495a78d118c144, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 625892b825cd76d41a495a78d118c144, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.025
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 625892b825cd76d41a495a78d118c144, type: 3}
       propertyPath: m_LocalPosition.z
@@ -715,12 +715,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71742f1d238e5234c9eee0b4ecdbeee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPoint: {fileID: 1947405469}
+  shotPoint: {fileID: 932278078}
+  laser: {fileID: 1947405469}
   moveSpeed: 10
   rotationSpeed: 10
   walkAnimationSpeed: 1
   velocity: {x: 0, y: 0, z: 0}
   camera: {fileID: 1687258581}
+  bullet: {fileID: 8664307525525515186, guid: 78b6c510781fe344fae8a292ffa2855b, type: 3}
   jumpForce: 0
 --- !u!136 &1668404842
 CapsuleCollider:
@@ -2592,7 +2594,6 @@ GameObject:
   - component: {fileID: 1947405469}
   - component: {fileID: 1947405472}
   - component: {fileID: 1947405471}
-  - component: {fileID: 1947405470}
   m_Layer: 0
   m_Name: laser
   m_TagString: Untagged
@@ -2609,25 +2610,11 @@ Transform:
   m_GameObject: {fileID: 1947405468}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 0.05, y: 5, z: 0.05}
+  m_LocalScale: {x: 0.025, y: 5, z: 0.025}
   m_Children: []
   m_Father: {fileID: 395760852}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!136 &1947405470
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947405468}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1947405471
 MeshRenderer:
   m_ObjectHideFlags: 0
