@@ -47,7 +47,7 @@ public class Controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            animator.SetTrigger("Jump");
+            animator.SetTrigger("Shot");
 
             Vector3 forward = laser.transform.position - transform.position;
             Vector3 upward = Vector3.up;
@@ -57,6 +57,9 @@ public class Controller : MonoBehaviour
             newRotation.x = 0.0f;
             transform.rotation = newRotation;
             Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+        }
+        if(Input.GetKeyUp(KeyCode.Mouse0)) {
+            animator.SetTrigger("EndShot");
         }
     }
 
