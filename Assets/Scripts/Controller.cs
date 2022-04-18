@@ -18,7 +18,11 @@ public class Controller : MonoBehaviour
 
     public GameObject bullet;
 
+    public GameObject grenadePrefab;
+
     public float jumpForce;
+
+    public float throwForce = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,8 @@ public class Controller : MonoBehaviour
         }
 
         Shoot();
+
+        ThrowGrenade();
     }
 
     void Shoot()
@@ -49,17 +55,31 @@ public class Controller : MonoBehaviour
         {
             animator.SetTrigger("Shot");
 
-            Vector3 forward = laser.transform.position - transform.position;
-            Vector3 upward = Vector3.up;
+            RotateChar();
 
-            Quaternion newRotation = Quaternion.LookRotation(forward, upward);
-            newRotation.z = 0.0f;
-            newRotation.x = 0.0f;
-            transform.rotation = newRotation;
             Instantiate(bullet, shotPoint.position, shotPoint.rotation);
         }
         if(Input.GetKeyUp(KeyCode.Mouse0)) {
             animator.SetTrigger("EndShot");
+        }
+    }
+
+    void RotateChar() {
+        Vector3 forward = laser.transform.position - transform.position;
+        Vector3 upward = Vector3.up;
+
+        Quaternion newRotation = Quaternion.LookRotation(forward, upward);
+        newRotation.z = 0.0f;
+        newRotation.x = 0.0f;
+        transform.rotation = newRotation;
+    }
+
+    void ThrowGrenade() {
+        if(Input.GetKeyDown(KeyCode.Q)) {
+            RotateChar();
+            GameObject grenade = Instantiate(grenadePrefab, shotPoint.position, shotPoint.rotation);
+            Rigidbody rb = grenade.GetComponent<Rigidbody>();
+            rb.AddForce(shotPoint.transform.forward * throwForce, ForceMode.VelocityChange);
         }
     }
 
