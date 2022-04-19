@@ -16,7 +16,7 @@ public class OnMouseLook : MonoBehaviour
 		
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
 			// Generate a plane that intersects the transform's position with an upwards normal.
 			Plane playerPlane = new Plane(Vector3.up, thisTransform.position);

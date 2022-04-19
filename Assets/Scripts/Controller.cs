@@ -16,11 +16,13 @@ public class Controller : MonoBehaviour
 
     public GameObject camera;
 
+    public Transform pointerTransform;
+
     public GameObject bullet;
 
     public GameObject grenadePrefab;
 
-    public float jumpForce;
+    bool alreadyAttacked;    
 
     public float throwForce = 10f;
 
@@ -39,29 +41,29 @@ public class Controller : MonoBehaviour
             Move(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
-
         Shoot();
-
         ThrowGrenade();
+        FastShoot();
     }
 
     void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !alreadyAttacked)
         {
             animator.SetTrigger("Shot");
-
+            alreadyAttacked = true;
             RotateChar();
+            Invoke(nameof(reload), 1);
+            Invoke(nameof(createBullet), 0.3f);
+        }
+    }
 
-            Instantiate(bullet, shotPoint.position, shotPoint.rotation);
-        }
-        if(Input.GetKeyUp(KeyCode.Mouse0)) {
-            animator.SetTrigger("EndShot");
-        }
+    void reload() {
+        alreadyAttacked = false;
+    }
+
+    void createBullet() {
+        Instantiate(bullet, shotPoint.position, shotPoint.rotation);
     }
 
     void RotateChar() {
@@ -83,6 +85,20 @@ public class Controller : MonoBehaviour
         }
     }
 
+    void FastShoot() {
+        if(Input.GetKeyDown(KeyCode.E)) {
+            animator.SetTrigger("Fast");
+            RotateChar();
+            Invoke(nameof(createBullet), 0.3f);
+            Invoke(nameof(createBullet), 0.7f);
+            Invoke(nameof(createBullet), 1.1f);
+        }
+    }
+
+    void kostyl() {
+        animator.SetBool("FastShoting", false);
+    }
+
     public void Move(float forward, float right)
     {
         Vector3 translation = Vector3.zero;
@@ -101,18 +117,17 @@ public class Controller : MonoBehaviour
         }
 
         rigidbody.velocity = new Vector3(velocity.normalized.x * moveSpeed, rigidbody.velocity.y, velocity.normalized.z * moveSpeed);
+        Vector3 pos = transform.position;
+        pos.y += 1;
+        pointerTransform.position = pos;
 
         if (velocity.magnitude > 0.2f)
         {
+      
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(velocity), Time.deltaTime * rotationSpeed);
+
         }
 
         animator.SetFloat("Velocity", velocity.magnitude * walkAnimationSpeed);
-    }
-
-    public void Jump()
-    {
-        rigidbody.AddForce(Vector3.up * jumpForce);
-        animator.SetTrigger("Jump");
     }
 }
