@@ -132,3 +132,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 3
+  explosionEffect: {fileID: 1938220975715532954, guid: 2ed8b222a58a545a0b8bb77d4ce26c9c, type: 3}
+  radius: 3
