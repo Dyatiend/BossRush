@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+
+    enum PlayerState {
+        IDLING,
+        RUNNING,
+        SHOOTING,
+        THROWING,
+        FAST_SHOOTING
+    }
+
+    private PlayerState state = PlayerState.IDLING;
+
     public Transform shotPoint;
 
     public Transform grenadePoint;
@@ -24,6 +35,17 @@ public class Controller : MonoBehaviour
 
     public GameObject grenadePrefab;
 
+    public float cooldownThrowingGrenade = 10f;
+
+    private float countdownThrowingGrenade = 0;
+
+    private bool readyToThrowingGrenade = true;
+
+    public float cooldownFastShooting = 5f;
+
+    private float countdownFastShooting = 0;
+    private bool readyToFastShooting = true;
+
     bool alreadyAttacked;    
 
     public float throwForce = 10f;
@@ -38,22 +60,34 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal") != 0.0f)
-        {
-            Move(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
-        }
-
+        Move();
         Shoot();
         ThrowGrenade();
         FastShoot();
+        reduceCountdownFastShooting();
+        reduceCountdownThrowingGrenade();
+    }
+
+    void reduceCountdownFastShooting() {
+        countdownFastShooting -= Time.deltaTime;
+        if(countdownFastShooting <= 0f && !readyToFastShooting) {
+            readyToFastShooting = true;
+        }
+    }
+
+    void reduceCountdownThrowingGrenade() {
+        countdownThrowingGrenade -= Time.deltaTime;
+        if(countdownThrowingGrenade <= 0f && !readyToThrowingGrenade) {
+            readyToThrowingGrenade = true;
+        }
     }
 
     void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !alreadyAttacked)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && state == PlayerState.IDLING)
         {
             animator.SetTrigger("Shot");
-            alreadyAttacked = true;
+            state = PlayerState.SHOOTING;
             RotateChar();
             Invoke(nameof(reload), 1);
             Invoke(nameof(createBullet), 0.3f);
@@ -61,7 +95,7 @@ public class Controller : MonoBehaviour
     }
 
     void reload() {
-        alreadyAttacked = false;
+        state = PlayerState.IDLING;
     }
 
     void createBullet() {
@@ -79,8 +113,11 @@ public class Controller : MonoBehaviour
     }
 
     void ThrowGrenade() {
-        if(Input.GetKeyDown(KeyCode.Q)) {
+        if(Input.GetKeyDown(KeyCode.Q) && state == PlayerState.IDLING && readyToThrowingGrenade) {
+            state = PlayerState.THROWING;
             RotateChar();
+            countdownThrowingGrenade = cooldownThrowingGrenade;
+            readyToThrowingGrenade = false;
             animator.SetTrigger("Throw");
             Invoke(nameof(createGrenade), 0.3f);
         }
@@ -90,51 +127,59 @@ public class Controller : MonoBehaviour
         GameObject grenade = Instantiate(grenadePrefab, grenadePoint.position, grenadePoint.rotation);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
         rb.AddForce(grenadePoint.transform.forward * throwForce, ForceMode.VelocityChange);
+        state = PlayerState.IDLING;
     }
 
     void FastShoot() {
-        if(Input.GetKeyDown(KeyCode.E)) {
+        if(Input.GetKeyDown(KeyCode.E) && state == PlayerState.IDLING && readyToFastShooting) {
+            state = PlayerState.FAST_SHOOTING;
             animator.SetTrigger("Fast");
             RotateChar();
+            countdownFastShooting = cooldownFastShooting;
+            readyToFastShooting = false;
             Invoke(nameof(createBullet), 0.3f);
             Invoke(nameof(createBullet), 0.7f);
             Invoke(nameof(createBullet), 1.1f);
+            Invoke(nameof(reload), 1.2f);
         }
     }
 
-    void kostyl() {
-        animator.SetBool("FastShoting", false);
-    }
-
-    public void Move(float forward, float right)
+    public void Move()
     {
-        Vector3 translation = Vector3.zero;
-
-        translation = forward * camera.transform.forward;
-        translation += right * camera.transform.right;
-        translation.y = 0;
-
-        if(translation.magnitude > 0.2f)
+        if((Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal") != 0.0f) && state == PlayerState.IDLING)
         {
-            velocity = translation;
-        }
-        else
-        {
-            velocity = Vector3.zero;
-        }
+            state = PlayerState.RUNNING;
+            float forward = Input.GetAxis("Vertical");
+            float right = Input.GetAxis("Horizontal");
 
-        rigidbody.velocity = new Vector3(velocity.normalized.x * moveSpeed, rigidbody.velocity.y, velocity.normalized.z * moveSpeed);
-        Vector3 pos = transform.position;
-        pos.y += 1;
-        pointerTransform.position = pos;
+            Vector3 translation = Vector3.zero;
 
-        if (velocity.magnitude > 0.2f)
-        {
+            translation = forward * camera.transform.forward;
+            translation += right * camera.transform.right;
+            translation.y = 0;
+
+            if(translation.magnitude > 0.2f)
+            {
+                velocity = translation;
+            }
+            else
+            {
+                velocity = Vector3.zero;
+            }
+
+            rigidbody.velocity = new Vector3(velocity.normalized.x * moveSpeed, rigidbody.velocity.y, velocity.normalized.z * moveSpeed);
+            Vector3 pos = transform.position;
+            pos.y += 1;
+            pointerTransform.position = pos;
+
+            if (velocity.magnitude > 0.2f)
+            {
       
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(velocity), Time.deltaTime * rotationSpeed);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(velocity), Time.deltaTime * rotationSpeed);
 
+            }
+            animator.SetFloat("Velocity", velocity.magnitude * walkAnimationSpeed);
+            state = PlayerState.IDLING;
         }
-
-        animator.SetFloat("Velocity", velocity.magnitude * walkAnimationSpeed);
     }
 }
