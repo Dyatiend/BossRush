@@ -5,6 +5,8 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public Transform shotPoint;
+
+    public Transform grenadePoint;
     public Transform laser;
     public float moveSpeed;
     public float rotationSpeed;
@@ -79,10 +81,15 @@ public class Controller : MonoBehaviour
     void ThrowGrenade() {
         if(Input.GetKeyDown(KeyCode.Q)) {
             RotateChar();
-            GameObject grenade = Instantiate(grenadePrefab, shotPoint.position, shotPoint.rotation);
-            Rigidbody rb = grenade.GetComponent<Rigidbody>();
-            rb.AddForce(shotPoint.transform.forward * throwForce, ForceMode.VelocityChange);
+            animator.SetTrigger("Throw");
+            Invoke(nameof(createGrenade), 0.3f);
         }
+    }
+
+    void createGrenade() {
+        GameObject grenade = Instantiate(grenadePrefab, grenadePoint.position, grenadePoint.rotation);
+        Rigidbody rb = grenade.GetComponent<Rigidbody>();
+        rb.AddForce(grenadePoint.transform.forward * throwForce, ForceMode.VelocityChange);
     }
 
     void FastShoot() {
