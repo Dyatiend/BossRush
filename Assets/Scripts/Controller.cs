@@ -13,6 +13,8 @@ public class Controller : MonoBehaviour
         FAST_SHOOTING
     }
 
+    AudioSource audio;
+
     private PlayerState state = PlayerState.IDLING;
 
     public Transform shotPoint;
@@ -53,6 +55,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
@@ -99,6 +102,7 @@ public class Controller : MonoBehaviour
     }
 
     void createBullet() {
+        audio.Play();
         Instantiate(bullet, shotPoint.position, shotPoint.rotation);
     }
 

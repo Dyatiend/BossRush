@@ -5,6 +5,10 @@ using UnityEngine;
 public class Grenade : MonoBehaviour
 {
 
+    AudioSource audio;
+
+    MeshRenderer meshRenderer;
+
     public float delay = 3f;
 
     public GameObject explosionEffect;
@@ -17,6 +21,8 @@ public class Grenade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+        meshRenderer = GetComponent<MeshRenderer>();
         countdown = delay;
     }
 
@@ -32,7 +38,7 @@ public class Grenade : MonoBehaviour
 
     void Explode() {
         GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
-
+        audio.Play();
         Destroy(explosion, 1f);
 
 
@@ -44,6 +50,7 @@ public class Grenade : MonoBehaviour
             }
         }
         
-        Destroy(gameObject);
+        Destroy(meshRenderer);
+        Destroy(gameObject, 1f);
     }
 }
