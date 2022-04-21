@@ -69,6 +69,18 @@ public class Controller : MonoBehaviour
         FastShoot();
         reduceCountdownFastShooting();
         reduceCountdownThrowingGrenade();
+        Charge();
+    }
+
+    void Charge() {
+        if(Input.GetKey(KeyCode.F)) {
+            rigidbody.velocity = transform.forward * 50;
+            Invoke(nameof(endCharge), 0.2f);
+        }
+    }
+
+    void endCharge() {
+        rigidbody.velocity = Vector3.zero;
     }
 
     void reduceCountdownFastShooting() {
@@ -89,6 +101,8 @@ public class Controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && state == PlayerState.IDLING)
         {
+            rigidbody.velocity = Vector3.zero;
+            animator.SetFloat("Velocity", 0);
             animator.SetTrigger("Shot");
             state = PlayerState.SHOOTING;
             RotateChar();
@@ -118,6 +132,8 @@ public class Controller : MonoBehaviour
 
     void ThrowGrenade() {
         if(Input.GetKeyDown(KeyCode.Q) && state == PlayerState.IDLING && readyToThrowingGrenade) {
+            rigidbody.velocity = Vector3.zero;
+            animator.SetFloat("Velocity", 0);
             state = PlayerState.THROWING;
             RotateChar();
             countdownThrowingGrenade = cooldownThrowingGrenade;
@@ -136,6 +152,8 @@ public class Controller : MonoBehaviour
 
     void FastShoot() {
         if(Input.GetKeyDown(KeyCode.E) && state == PlayerState.IDLING && readyToFastShooting) {
+            rigidbody.velocity = Vector3.zero;
+            animator.SetFloat("Velocity", 0);
             state = PlayerState.FAST_SHOOTING;
             animator.SetTrigger("Fast");
             RotateChar();
