@@ -910,23 +910,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 625892b825cd76d41a495a78d118c144, type: 3}
   m_PrefabInstance: {fileID: 1607321254}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1668404841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668404840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71742f1d238e5234c9eee0b4ecdbeee7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  rotationSpeed: 10
-  walkAnimationSpeed: 1
-  velocity: {x: 0, y: 0, z: 0}
-  camera: {fileID: 1687258581}
 --- !u!136 &1668404842
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1089,7 +1072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74695a6218cba4177913934f899f17e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 1947405469}
   grenadePoint: {fileID: 282607819}
   grenadePrefab: {fileID: 3164827457746377465, guid: dd2c84a01f8ca468ea342f13e532f83b, type: 3}
   cooldownThrowingGrenade: 10
@@ -1119,7 +1101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178850edcd9ce4bac964fea8b33ac6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 1947405469}
   bullet: {fileID: 8664307525525515186, guid: 78b6c510781fe344fae8a292ffa2855b, type: 3}
   shotPoint: {fileID: 932278078}
 --- !u!114 &1668404850
@@ -1146,8 +1127,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbae01dc918e4f1dbc0a65d9a387af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 1947405469}
   dashForce: 50
+--- !u!114 &1668404852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668404840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e822150872eb4698b3e6809f3f573f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1687258581}
+  laser: {fileID: 1947405469}
+--- !u!114 &1668404853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668404840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d955761e8fed4b28a1433b166e6cd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  rotationSpeed: 10
+  walkAnimationSpeed: 3
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0

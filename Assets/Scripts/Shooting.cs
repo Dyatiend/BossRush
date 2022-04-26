@@ -5,7 +5,6 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     private Animator animator;
-    public Transform laser;
     private PlayerState state;
     public GameObject bullet;
     AudioSource audio;
@@ -24,21 +23,17 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        
     }
 
-    void Shoot()
+    public void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && state.checkState(PlayerState.States.IDLING))
-        {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            animator.SetFloat("Velocity", 0);
-            animator.SetTrigger("Shot");
-            state.changeState(PlayerState.States.SHOOTING);
-            RotateChar();
-            Invoke(nameof(reload), 1);
-            Invoke(nameof(createBullet), 0.3f);
-        }
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        animator.SetFloat("Velocity", 0);
+        animator.SetTrigger("Shot");
+        state.changeState(PlayerState.States.SHOOTING);
+        Invoke(nameof(reload), 1);
+        Invoke(nameof(createBullet), 0.3f);
     }
 
     public void reload() {
@@ -48,15 +43,5 @@ public class Shooting : MonoBehaviour
     public void createBullet() {
         audio.Play();
         Instantiate(bullet, shotPoint.position, shotPoint.rotation);
-    }
-
-    public void RotateChar() {
-        Vector3 forward = laser.transform.position - transform.position;
-        Vector3 upward = Vector3.up;
-
-        Quaternion newRotation = Quaternion.LookRotation(forward, upward);
-        newRotation.z = 0.0f;
-        newRotation.x = 0.0f;
-        transform.rotation = newRotation;
     }
 }
