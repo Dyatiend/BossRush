@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5747ff1d4bf1e9a4abb8c44478d63da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1668404844}
   speed: 1000
 --- !u!1 &470471656
 GameObject:
@@ -921,20 +922,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71742f1d238e5234c9eee0b4ecdbeee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPoint: {fileID: 932278078}
-  grenadePoint: {fileID: 282607819}
-  laser: {fileID: 1947405469}
   moveSpeed: 10
   rotationSpeed: 10
   walkAnimationSpeed: 1
   velocity: {x: 0, y: 0, z: 0}
   camera: {fileID: 1687258581}
-  pointerTransform: {fileID: 395760852}
-  bullet: {fileID: 8664307525525515186, guid: 78b6c510781fe344fae8a292ffa2855b, type: 3}
-  grenadePrefab: {fileID: 3164827457746377465, guid: dd2c84a01f8ca468ea342f13e532f83b, type: 3}
-  cooldownThrowingGrenade: 10
-  cooldownFastShooting: 5
-  throwForce: 9
 --- !u!136 &1668404842
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1085,6 +1077,77 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1668404847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668404840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74695a6218cba4177913934f899f17e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laser: {fileID: 1947405469}
+  grenadePoint: {fileID: 282607819}
+  grenadePrefab: {fileID: 3164827457746377465, guid: dd2c84a01f8ca468ea342f13e532f83b, type: 3}
+  cooldownThrowingGrenade: 10
+  throwForce: 10
+--- !u!114 &1668404848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668404840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf273237f18b429ea733fd3a9e8b73c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownFastShooting: 5
+--- !u!114 &1668404849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668404840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178850edcd9ce4bac964fea8b33ac6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laser: {fileID: 1947405469}
+  bullet: {fileID: 8664307525525515186, guid: 78b6c510781fe344fae8a292ffa2855b, type: 3}
+  shotPoint: {fileID: 932278078}
+--- !u!114 &1668404850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668404840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7983d321f1d6f436aa7da05610a0c603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1668404851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668404840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbae01dc918e4f1dbc0a65d9a387af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laser: {fileID: 1947405469}
+  dashForce: 50
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0

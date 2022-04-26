@@ -4,16 +4,18 @@ using UnityEngine;
 public class OnMouseLook : MonoBehaviour
 {
 	private Transform thisTransform;
-	private Transform enemy_target;
-
-	public static bool look;
-
+	public Transform playerTransform;
 	public float speed;
 
 	void Start()
 	{
 		thisTransform = transform;
-		
+	}
+
+	void Update() {
+		Vector3 pos = playerTransform.position;
+        pos.y += 1;
+		transform.position = pos;
 	}
 
 	void FixedUpdate()

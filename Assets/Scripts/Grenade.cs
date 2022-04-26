@@ -6,15 +6,10 @@ public class Grenade : MonoBehaviour
 {
 
     AudioSource audio;
-
     MeshRenderer meshRenderer;
-
     public float delay = 3f;
-
     public GameObject explosionEffect;
-
     public float radius = 3f;
-
     float countdown;
     bool hasExploded = false;
 

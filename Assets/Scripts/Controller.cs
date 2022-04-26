@@ -4,173 +4,37 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-
-    enum PlayerState {
-        IDLING,
-        RUNNING,
-        SHOOTING,
-        THROWING,
-        FAST_SHOOTING
-    }
-
-    AudioSource audio;
-
-    private PlayerState state = PlayerState.IDLING;
-
-    public Transform shotPoint;
-
-    public Transform grenadePoint;
-    public Transform laser;
+    private PlayerState state;
+    
     public float moveSpeed;
     public float rotationSpeed;
     public float walkAnimationSpeed;
     public Vector3 velocity;
-
     private Rigidbody rigidbody;
     private Animator animator;
 
-    public GameObject camera;
-
-    public Transform pointerTransform;
-
-    public GameObject bullet;
-
-    public GameObject grenadePrefab;
-
-    public float cooldownThrowingGrenade = 10f;
-
-    private float countdownThrowingGrenade = 0;
-
-    private bool readyToThrowingGrenade = true;
-
-    public float cooldownFastShooting = 5f;
-
-    private float countdownFastShooting = 0;
-    private bool readyToFastShooting = true;
-
-    bool alreadyAttacked;    
-
-    public float throwForce = 10f;
+    public GameObject camera;    
 
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+
+        state = GetComponent<PlayerState>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        Shoot();
-        ThrowGrenade();
-        FastShoot();
-        reduceCountdownFastShooting();
-        reduceCountdownThrowingGrenade();
-        Charge();
-    }
-
-    void Charge() {
-        if(Input.GetKey(KeyCode.F)) {
-            rigidbody.velocity = transform.forward * 50;
-            Invoke(nameof(endCharge), 0.2f);
-        }
-    }
-
-    void endCharge() {
-        rigidbody.velocity = Vector3.zero;
-    }
-
-    void reduceCountdownFastShooting() {
-        countdownFastShooting -= Time.deltaTime;
-        if(countdownFastShooting <= 0f && !readyToFastShooting) {
-            readyToFastShooting = true;
-        }
-    }
-
-    void reduceCountdownThrowingGrenade() {
-        countdownThrowingGrenade -= Time.deltaTime;
-        if(countdownThrowingGrenade <= 0f && !readyToThrowingGrenade) {
-            readyToThrowingGrenade = true;
-        }
-    }
-
-    void Shoot()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && state == PlayerState.IDLING)
-        {
-            rigidbody.velocity = Vector3.zero;
-            animator.SetFloat("Velocity", 0);
-            animator.SetTrigger("Shot");
-            state = PlayerState.SHOOTING;
-            RotateChar();
-            Invoke(nameof(reload), 1);
-            Invoke(nameof(createBullet), 0.3f);
-        }
-    }
-
-    void reload() {
-        state = PlayerState.IDLING;
-    }
-
-    void createBullet() {
-        audio.Play();
-        Instantiate(bullet, shotPoint.position, shotPoint.rotation);
-    }
-
-    void RotateChar() {
-        Vector3 forward = laser.transform.position - transform.position;
-        Vector3 upward = Vector3.up;
-
-        Quaternion newRotation = Quaternion.LookRotation(forward, upward);
-        newRotation.z = 0.0f;
-        newRotation.x = 0.0f;
-        transform.rotation = newRotation;
-    }
-
-    void ThrowGrenade() {
-        if(Input.GetKeyDown(KeyCode.Q) && state == PlayerState.IDLING && readyToThrowingGrenade) {
-            rigidbody.velocity = Vector3.zero;
-            animator.SetFloat("Velocity", 0);
-            state = PlayerState.THROWING;
-            RotateChar();
-            countdownThrowingGrenade = cooldownThrowingGrenade;
-            readyToThrowingGrenade = false;
-            animator.SetTrigger("Throw");
-            Invoke(nameof(createGrenade), 0.3f);
-        }
-    }
-
-    void createGrenade() {
-        GameObject grenade = Instantiate(grenadePrefab, grenadePoint.position, grenadePoint.rotation);
-        Rigidbody rb = grenade.GetComponent<Rigidbody>();
-        rb.AddForce(grenadePoint.transform.forward * throwForce, ForceMode.VelocityChange);
-        state = PlayerState.IDLING;
-    }
-
-    void FastShoot() {
-        if(Input.GetKeyDown(KeyCode.E) && state == PlayerState.IDLING && readyToFastShooting) {
-            rigidbody.velocity = Vector3.zero;
-            animator.SetFloat("Velocity", 0);
-            state = PlayerState.FAST_SHOOTING;
-            animator.SetTrigger("Fast");
-            RotateChar();
-            countdownFastShooting = cooldownFastShooting;
-            readyToFastShooting = false;
-            Invoke(nameof(createBullet), 0.3f);
-            Invoke(nameof(createBullet), 0.7f);
-            Invoke(nameof(createBullet), 1.1f);
-            Invoke(nameof(reload), 1.2f);
-        }
     }
 
     public void Move()
     {
-        if((Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal") != 0.0f) && state == PlayerState.IDLING)
+        if((Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal") != 0.0f) && state.checkState(PlayerState.States.IDLING))
         {
-            state = PlayerState.RUNNING;
+            state.changeState(PlayerState.States.RUNNING);
             float forward = Input.GetAxis("Vertical");
             float right = Input.GetAxis("Horizontal");
 
@@ -190,9 +54,6 @@ public class Controller : MonoBehaviour
             }
 
             rigidbody.velocity = new Vector3(velocity.normalized.x * moveSpeed, rigidbody.velocity.y, velocity.normalized.z * moveSpeed);
-            Vector3 pos = transform.position;
-            pos.y += 1;
-            pointerTransform.position = pos;
 
             if (velocity.magnitude > 0.2f)
             {
@@ -201,7 +62,7 @@ public class Controller : MonoBehaviour
 
             }
             animator.SetFloat("Velocity", velocity.magnitude * walkAnimationSpeed);
-            state = PlayerState.IDLING;
+            state.changeState(PlayerState.States.IDLING);
         }
     }
 }
