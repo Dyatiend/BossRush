@@ -13,12 +13,14 @@ public class Locomotion : MonoBehaviour
     private Rigidbody rigidbody;
     private Animator animator;
     private State state;
-    
+
+    private float maxMoveSpeed;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         state = GetComponent<State>();
+        maxMoveSpeed = moveSpeed;
     }
 
     public void Move(float forward, float right)
@@ -52,24 +54,27 @@ public class Locomotion : MonoBehaviour
         state.ChangeState(State.States.IDLE);
     }
 
-    private float previousMoveSpeed;
+    
 
     public void Slow(float slowing, float time)
     {
-        previousMoveSpeed = moveSpeed;
-        moveSpeed = moveSpeed * slowing;
-        Invoke(nameof(UndoSlow), time);
+        if (maxMoveSpeed == moveSpeed)
+        {
+            moveSpeed = moveSpeed * slowing;
+            Invoke(nameof(UndoSlow), time);
+        }
     }
 
     private void UndoSlow()
     {
-        moveSpeed = previousMoveSpeed;
+        moveSpeed = maxMoveSpeed;
     }
 
     public void Stun(float stunTime)
     {
         rigidbody.velocity = Vector3.zero;
         animator.SetFloat("Velocity", 0);
+        animator.SetTrigger("Stun");
 
         state.ChangeState(State.States.STUN);
         Invoke(nameof(UndoStun), stunTime);
@@ -77,6 +82,7 @@ public class Locomotion : MonoBehaviour
 
     private void UndoStun()
     {
+        animator.SetTrigger("Unstun");
         state.UndoStun();
     }
 }
