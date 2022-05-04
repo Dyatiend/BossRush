@@ -34,6 +34,11 @@ public class ThrowingGrenade : MonoBehaviour
         countdownThrowingGrenade = cooldownThrowingGrenade;
         animator.SetTrigger("Throw");
         Invoke(nameof(createGrenade), 0.3f);
+        Invoke(nameof(reload), 0.65f);
+    }
+
+    public void reload() {
+        state.changeState(PlayerState.States.IDLING);
     }
 
     public bool checkReadyToThrowingGrenade() {
@@ -44,7 +49,6 @@ public class ThrowingGrenade : MonoBehaviour
         GameObject grenade = Instantiate(grenadePrefab, grenadePoint.position, grenadePoint.rotation);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
         rb.AddForce(grenadePoint.transform.forward * throwForce, ForceMode.VelocityChange);
-        state.changeState(PlayerState.States.IDLING);
     }
 
     void reduceCountdownThrowingGrenade() {

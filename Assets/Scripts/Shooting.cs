@@ -32,7 +32,7 @@ public class Shooting : MonoBehaviour
         animator.SetFloat("Velocity", 0);
         animator.SetTrigger("Shot");
         state.changeState(PlayerState.States.SHOOTING);
-        Invoke(nameof(reload), 1);
+        Invoke(nameof(reload), 1.15f);
         Invoke(nameof(createBullet), 0.3f);
     }
 

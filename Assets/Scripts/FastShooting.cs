@@ -36,7 +36,7 @@ public class FastShooting : MonoBehaviour
         Invoke(nameof(createBullet), 0.3f);
         Invoke(nameof(createBullet), 0.7f);
         Invoke(nameof(createBullet), 1.1f);
-        Invoke(nameof(reload), 1.2f);
+        Invoke(nameof(reload), 1.8f);
     }
 
     public bool checkReadyToFastShooting() {
