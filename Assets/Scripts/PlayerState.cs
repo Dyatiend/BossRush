@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class State : MonoBehaviour
+public class PlayerState : MonoBehaviour
 {
-    public enum States
-    {
+
+    public enum States {
         IDLE,
         RUN,
         ATTACK,
         ABILITY,
         ULTIMATE,
         DEAD,
-        STUN
-    }
+        STUN,
+        DASH,
+        THROW,
+        FAST_SHOOT,
+    }//SHOOT,
 
     private States state;
 
-    public void ChangeState(States state)
-    {
+    public void ChangeState(States state) {
         if(this.state != States.DEAD && this.state != States.STUN) this.state = state;
     }
 
@@ -27,15 +29,14 @@ public class State : MonoBehaviour
         if (state == States.STUN) state = States.IDLE;
     }
 
-    public States GetState()
-    {
+    public States GetState() {
         return this.state;
     }
 
-    public bool CheckState(States state)
-    {
+    public bool CheckState(States state) {
         return GetState() == state;
     }
+
     void Start()
     {
         ChangeState(States.IDLE);

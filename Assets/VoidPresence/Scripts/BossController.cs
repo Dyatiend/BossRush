@@ -9,7 +9,7 @@ public class BossController : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     private Rigidbody rigidbody;
-    private State state;
+    private PlayerState state;
     private Attack attack;
     private Ability ability;
     private BossUltimate ultimate;
@@ -20,7 +20,7 @@ public class BossController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
-        state = GetComponent<State>();
+        state = GetComponent<PlayerState>();
         attack = GetComponent<Attack>();
         ability = GetComponent<Ability>();
         ultimate = GetComponent<BossUltimate>();
@@ -28,7 +28,7 @@ public class BossController : MonoBehaviour
 
     void Update()
     {
-        if(state.CheckState(State.States.IDLE) || state.CheckState(State.States.RUN))
+        if(state.CheckState(PlayerState.States.IDLE) || state.CheckState(PlayerState.States.RUN))
         {
             if (Vector3.Distance(transform.position, target.position) >= 15)
             {

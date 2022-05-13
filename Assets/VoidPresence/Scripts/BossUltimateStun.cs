@@ -12,7 +12,7 @@ public class BossUltimateStun : MonoBehaviour
         if (collider.tag == ("Player"))
         {
             collider.GetComponent<Health>().TakeDamage(dealingDamage);
-            collider.GetComponent<Locomotion1>().Stun(stunTime);
+            collider.GetComponent<Locomotion>().Stun(stunTime);
         }
     }
 }

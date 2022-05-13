@@ -31,13 +31,13 @@ public class Shooting : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         animator.SetFloat("Velocity", 0);
         animator.SetTrigger("Shot");
-        state.changeState(PlayerState.States.SHOOTING);
+        state.ChangeState(PlayerState.States.ATTACK);
         Invoke(nameof(reload), 1.15f);
         Invoke(nameof(createBullet), 0.3f);
     }
 
     public void reload() {
-        state.changeState(PlayerState.States.IDLING);
+        state.ChangeState(PlayerState.States.IDLE);
     }
 
     public void createBullet() {

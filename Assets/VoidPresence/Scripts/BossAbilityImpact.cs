@@ -13,7 +13,7 @@ public class BossAbilityImpact : MonoBehaviour
         if (collider.tag == ("Player"))
         {
             collider.GetComponent<Health>().TakeDamage(dealingDamage);
-            collider.GetComponent<Locomotion1>().Slow(slowing, slowingTime);
+            collider.GetComponent<Locomotion>().Slow(slowing, slowingTime);
         }
         if (collider.tag != ("Boss"))
         {

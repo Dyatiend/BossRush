@@ -31,7 +31,7 @@ public class BossPeepob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(state.checkState(PlayerState.States.IDLING) 
+        if(state.CheckState(PlayerState.States.IDLE) 
         && Vector3.Distance(transform.position, target.position) <= 15f
         && Vector3.Distance(transform.position, target.position) > 10f
         && throwingGrenade.checkReadyToThrowingGrenade()) {
@@ -39,13 +39,13 @@ public class BossPeepob : MonoBehaviour
             transform.LookAt(target.position);
             throwingGrenade.ThrowGrenade();       
         }
-        else if(state.checkState(PlayerState.States.IDLING) 
+        else if(state.CheckState(PlayerState.States.IDLE) 
         && Vector3.Distance(transform.position, target.position) >= 10f) {
             nashAgent.SetDestination(target.position);
             animator.SetFloat("Velocity", rigidbody.velocity.magnitude * locomotion.walkAnimationSpeed);
         }
         else if(Vector3.Distance(transform.position, target.position) <= 5f 
-        && fastShooting.checkReadyToFastShooting() && state.checkState(PlayerState.States.IDLING)) {
+        && fastShooting.checkReadyToFastShooting() && state.CheckState(PlayerState.States.IDLE)) {
             nashAgent.SetDestination(transform.position);
 
             transform.LookAt(target);
@@ -59,7 +59,7 @@ public class BossPeepob : MonoBehaviour
             Invoke(nameof(rotate), 0.65f);
             Invoke(nameof(rotate), 1.05f);            
         }
-        else if(state.checkState(PlayerState.States.IDLING) 
+        else if(state.CheckState(PlayerState.States.IDLE) 
         && Vector3.Distance(transform.position, target.position) <= 10f) {
             nashAgent.SetDestination(transform.position);
             transform.LookAt(target.position);

@@ -30,7 +30,7 @@ public class ThrowingGrenade : MonoBehaviour
     public void ThrowGrenade() {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         animator.SetFloat("Velocity", 0);
-        state.changeState(PlayerState.States.THROWING);
+        state.ChangeState(PlayerState.States.THROW);
         countdownThrowingGrenade = cooldownThrowingGrenade;
         animator.SetTrigger("Throw");
         Invoke(nameof(createGrenade), 0.3f);
@@ -38,7 +38,7 @@ public class ThrowingGrenade : MonoBehaviour
     }
 
     public void reload() {
-        state.changeState(PlayerState.States.IDLING);
+        state.ChangeState(PlayerState.States.IDLE);
     }
 
     public bool checkReadyToThrowingGrenade() {

@@ -1663,9 +1663,9 @@ GameObject:
   - component: {fileID: 8014131665532491320}
   - component: {fileID: 7203089359649319777}
   - component: {fileID: 7203089359649319781}
-  - component: {fileID: 5726564450476352242}
   - component: {fileID: 7203089359649319780}
   - component: {fileID: 7203089359649319787}
+  - component: {fileID: 1775443437}
   m_Layer: 0
   m_Name: VoidPresenceBoss
   m_TagString: Boss
@@ -1806,18 +1806,6 @@ MonoBehaviour:
   timeBetweenAttacks: 3.25
   ultimateRange: 5
   effectsCount: 3
---- !u!114 &5726564450476352242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7203089359649319782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dea1ae280baf724d98708a0ebc96e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &7203089359649319780
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1850,6 +1838,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 385176375e71cec4981e3c5f50558843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1775443437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7203089359649319782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7983d321f1d6f436aa7da05610a0c603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7865756864730846321

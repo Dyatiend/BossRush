@@ -30,7 +30,7 @@ public class FastShooting : MonoBehaviour
     public void FastShoot() {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         animator.SetFloat("Velocity", 0);
-        state.changeState(PlayerState.States.FAST_SHOOTING);
+        state.ChangeState(PlayerState.States.FAST_SHOOT);
         animator.SetTrigger("Fast");
         countdownFastShooting = cooldownFastShooting;
         Invoke(nameof(createBullet), 0.3f);

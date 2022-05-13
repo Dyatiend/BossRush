@@ -26,24 +26,24 @@ public class ControllerPeepob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal") != 0.0f) && state.checkState(PlayerState.States.IDLING))
+        if((Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal") != 0.0f) && state.CheckState(PlayerState.States.IDLE))
         {
             locomotion.Move(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"), camera);
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && state.checkState(PlayerState.States.IDLING))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && state.CheckState(PlayerState.States.IDLE))
         {
             RotateChar();
             shooting.Shoot();
         }
-        if(Input.GetKeyDown(KeyCode.E) && fastShooting.checkReadyToFastShooting() && state.checkState(PlayerState.States.IDLING)) {
+        if(Input.GetKeyDown(KeyCode.E) && fastShooting.checkReadyToFastShooting() && state.CheckState(PlayerState.States.IDLE)) {
             RotateChar();
             fastShooting.FastShoot();
         }
-        if(Input.GetKeyDown(KeyCode.Q) && throwingGrenade.checkReadyToThrowingGrenade() && state.checkState(PlayerState.States.IDLING)) {
+        if(Input.GetKeyDown(KeyCode.Q) && throwingGrenade.checkReadyToThrowingGrenade() && state.CheckState(PlayerState.States.IDLE)) {
             RotateChar();
             throwingGrenade.ThrowGrenade();
         }
-        if(Input.GetKey(KeyCode.F) && state.checkState(PlayerState.States.IDLING)) {
+        if(Input.GetKey(KeyCode.F) && state.CheckState(PlayerState.States.IDLE)) {
             RotateChar();
             dash.toDash();
         }

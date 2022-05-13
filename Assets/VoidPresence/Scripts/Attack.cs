@@ -5,7 +5,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     private Animator animator;
-    private State state;
+    private PlayerState state;
 
     public GameObject projectile;
     public Transform projectilePoint;
@@ -20,12 +20,12 @@ public class Attack : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        state = GetComponent<State>();
+        state = GetComponent<PlayerState>();
     }
 
     public void MakeAttack()
     {
-        state.ChangeState(State.States.ATTACK);
+        state.ChangeState(PlayerState.States.ATTACK);
 
         GetComponent<Rigidbody>().velocity = Vector3.zero;
 
@@ -38,7 +38,7 @@ public class Attack : MonoBehaviour
 
     public void Reload()
     {
-        state.ChangeState(State.States.IDLE);
+        state.ChangeState(PlayerState.States.IDLE);
     }
 
     public void CreateProjectiles()

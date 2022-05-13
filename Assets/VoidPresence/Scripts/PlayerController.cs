@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject camera; 
     public Transform poiter;
-    private State state;
-    private Locomotion1 locomotion;
+    private PlayerState state;
+    private Locomotion locomotion;
     private Attack attack;
     private Ability ability;
     private PlayerUltimate ultimate;
 
     void Start()
     {
-        state = GetComponent<State>();
-        locomotion = GetComponent<Locomotion1>();
+        state = GetComponent<PlayerState>();
+        locomotion = GetComponent<Locomotion>();
         attack = GetComponent<Attack>();
         ability = GetComponent<Ability>();
         ultimate = GetComponent<PlayerUltimate>();
@@ -22,17 +23,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && (state.CheckState(State.States.IDLE) || state.CheckState(State.States.RUN)))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && (state.CheckState(PlayerState.States.IDLE) || state.CheckState(PlayerState.States.RUN)))
         {
             RotateToPointer();
             attack.MakeAttack();
         }
-        if (Input.GetKeyDown(KeyCode.E) && (state.CheckState(State.States.IDLE) || state.CheckState(State.States.RUN)))
+        if (Input.GetKeyDown(KeyCode.E) && (state.CheckState(PlayerState.States.IDLE) || state.CheckState(PlayerState.States.RUN)))
         {
             RotateToPointer();
             ability.MakeAbility();
         }
-        if (Input.GetKeyDown(KeyCode.R) && (state.CheckState(State.States.IDLE) || state.CheckState(State.States.RUN)))
+        if (Input.GetKeyDown(KeyCode.R) && (state.CheckState(PlayerState.States.IDLE) || state.CheckState(PlayerState.States.RUN)))
         {
             RotateToPointer();
             ultimate.MakeUltimate();
@@ -42,9 +43,9 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if ((Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal") != 0.0f) && 
-            (state.CheckState(State.States.IDLE) || state.CheckState(State.States.RUN)))
+            (state.CheckState(PlayerState.States.IDLE) || state.CheckState(PlayerState.States.RUN)))
         {
-            locomotion.Move(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+            locomotion.Move(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"), camera);
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ability : MonoBehaviour
 {
     private Animator animator;
-    private State state;
+    private PlayerState state;
 
     public GameObject ability;
     public Transform abilityPoint;
@@ -17,12 +17,12 @@ public class Ability : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        state = GetComponent<State>();
+        state = GetComponent<PlayerState>();
     }
 
     public void MakeAbility()
     {
-        state.ChangeState(State.States.ABILITY);
+        state.ChangeState(PlayerState.States.ABILITY);
 
         GetComponent<Rigidbody>().velocity = Vector3.zero;
 
@@ -35,7 +35,7 @@ public class Ability : MonoBehaviour
 
     public void Reload()
     {
-        state.ChangeState(State.States.IDLE);
+        state.ChangeState(PlayerState.States.IDLE);
     }
 
     public void CreateAbilityEffect()

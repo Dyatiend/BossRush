@@ -8,12 +8,12 @@ public class Health : MonoBehaviour
     public float deathTime = 2f;
 
     private Animator animator;
-    private State state;
+    private PlayerState state;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        state = GetComponent<State>();
+        state = GetComponent<PlayerState>();
     }
 
     public void TakeDamage(int damage)
@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
     private void Destroy()
     {
         animator.SetTrigger("Death");
-        state.ChangeState(State.States.DEAD);
+        state.ChangeState(PlayerState.States.DEAD);
         Destroy(gameObject, deathTime);
     }
 }

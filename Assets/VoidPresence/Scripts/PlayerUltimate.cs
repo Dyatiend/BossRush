@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerUltimate : MonoBehaviour
 {
     private Animator animator;
-    private State state;
+    private PlayerState state;
 
     public GameObject ultimateEffect;
     public Transform ultimatePoint;
@@ -17,12 +17,12 @@ public class PlayerUltimate : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        state = GetComponent<State>();
+        state = GetComponent<PlayerState>();
     }
 
     public void MakeUltimate()
     {
-        state.ChangeState(State.States.ULTIMATE);
+        state.ChangeState(PlayerState.States.ULTIMATE);
 
         GetComponent<Rigidbody>().velocity = Vector3.zero;
 
@@ -35,7 +35,7 @@ public class PlayerUltimate : MonoBehaviour
 
     public void Reload()
     {
-        state.ChangeState(State.States.IDLE);
+        state.ChangeState(PlayerState.States.IDLE);
     }
 
     public void CreateUltimateEffect()

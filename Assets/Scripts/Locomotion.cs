@@ -11,23 +11,20 @@ public class Locomotion : MonoBehaviour
     public Vector3 velocity;
     private Rigidbody rigidbody;
     private Animator animator;
-    // Start is called before the first frame update
+
+    private float maxMoveSpeed;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         state = GetComponent<PlayerState>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        maxMoveSpeed = moveSpeed;
     }
 
     public void Move(float forward, float right, GameObject camera = null)
     {
-        state.changeState(PlayerState.States.RUNNING);
+        state.ChangeState(PlayerState.States.RUN);
 
         Vector3 translation = Vector3.zero;
 
@@ -53,6 +50,36 @@ public class Locomotion : MonoBehaviour
 
         }
         animator.SetFloat("Velocity", velocity.magnitude * walkAnimationSpeed);
-        state.changeState(PlayerState.States.IDLING);
+        state.ChangeState(PlayerState.States.IDLE);
+    }
+
+    public void Slow(float slowing, float time)
+    {
+        if (maxMoveSpeed == moveSpeed)
+        {
+            moveSpeed = moveSpeed * slowing;
+            Invoke(nameof(UndoSlow), time);
+        }
+    }
+
+    private void UndoSlow()
+    {
+        moveSpeed = maxMoveSpeed;
+    }
+
+    public void Stun(float stunTime)
+    {
+        rigidbody.velocity = Vector3.zero;
+        animator.SetFloat("Velocity", 0);
+        animator.SetTrigger("Stun");
+
+        state.ChangeState(PlayerState.States.STUN);
+        Invoke(nameof(UndoStun), stunTime);
+    }
+
+    private void UndoStun()
+    {
+        animator.SetTrigger("Unstun");
+        state.UndoStun();
     }
 }

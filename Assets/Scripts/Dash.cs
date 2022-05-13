@@ -23,7 +23,7 @@ public class Dash : MonoBehaviour
     }
 
     public void toDash() {
-        state.changeState(PlayerState.States.DASH);
+        state.ChangeState(PlayerState.States.DASH);
         rigidbody.velocity = Vector3.zero;
 
         rigidbody.velocity = transform.forward * dashForce;
@@ -32,6 +32,6 @@ public class Dash : MonoBehaviour
 
     void endDash() {
         rigidbody.velocity = Vector3.zero;
-        state.changeState(PlayerState.States.IDLING);
+        state.ChangeState(PlayerState.States.IDLE);
     }
 }
