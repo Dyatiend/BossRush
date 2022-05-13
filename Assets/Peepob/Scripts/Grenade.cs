@@ -13,6 +13,10 @@ public class Grenade : MonoBehaviour
     float countdown;
     bool hasExploded = false;
 
+    public int damageForPlayer = 200;
+
+    public int damageForBoss = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +46,12 @@ public class Grenade : MonoBehaviour
         foreach(Collider collider in colliders) {
             if(collider.gameObject.CompareTag("Tyan")) {
                 Debug.Log("Tyan razorvalo");
+            }
+            if (collider.gameObject.CompareTag("Player")) {
+                collider.GetComponent<Health>().TakeDamage(damageForPlayer);
+            }
+            if (collider.gameObject.CompareTag("Boss")) {
+                collider.GetComponent<Health>().TakeDamage(damageForBoss);
             }
         }
         

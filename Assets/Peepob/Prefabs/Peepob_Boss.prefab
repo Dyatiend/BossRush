@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 4072418802607922043}
   - component: {fileID: 4072418802607922045}
   - component: {fileID: 4072418802607922046}
+  - component: {fileID: -982691710935886992}
   m_Layer: 0
   m_Name: Peepob_Boss
   m_TagString: Boss
@@ -618,6 +619,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87c0821a41944479852cba6ee7b6eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-982691710935886992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766498589105207039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242e03ab05f3587499e3c0362b15013b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 1000
+  deathTime: 5
 --- !u!1 &3870275821160588967
 GameObject:
   m_ObjectHideFlags: 0
