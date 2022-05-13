@@ -1016,6 +1016,7 @@ GameObject:
   - component: {fileID: 7382309930263458144}
   - component: {fileID: 7382309930263458145}
   - component: {fileID: 7382309930263458146}
+  - component: {fileID: 98970310610116622}
   m_Layer: 0
   m_Name: Peepob_Player
   m_TagString: Player
@@ -1284,6 +1285,20 @@ MonoBehaviour:
   grenadePrefab: {fileID: 3164827457746377465, guid: dd2c84a01f8ca468ea342f13e532f83b, type: 3}
   cooldownThrowingGrenade: 10
   throwForce: 10
+--- !u!114 &98970310610116622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7688297765819060003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242e03ab05f3587499e3c0362b15013b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 1000
+  deathTime: 5
 --- !u!1 &7728990381047308155
 GameObject:
   m_ObjectHideFlags: 0
