@@ -9,10 +9,14 @@ public class SimpleAttack : MonoBehaviour
 
     public float timeBetweenAttacks;
 
+    //----- След от удара
+    public GameObject slash;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         state = GetComponent<State>();
+        slash.SetActive(false);
     }
 
     void Update()
@@ -23,6 +27,7 @@ public class SimpleAttack : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("SimpleAttack");
+        StartCoroutine(slashMove());
 
         state.ChangeState(State.States.ATTACK);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -34,5 +39,13 @@ public class SimpleAttack : MonoBehaviour
     public void Reload()
     {
         state.ChangeState(State.States.IDLE);
+    }
+
+    IEnumerator slashMove()
+    {
+        yield return new WaitForSeconds(0.6f);
+        slash.SetActive(true);
+        yield return new WaitForSeconds(0.7f);
+        slash.SetActive(false);
     }
 }

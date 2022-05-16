@@ -8,10 +8,12 @@ public class Attack : MonoBehaviour
     public GameObject hammer;
     private Collider hammerCollider;
 
+    //----- Виды атак ----------
     private SimpleAttack simpleAttack;
     private MegaPunch megaPunch;
     private SpellAttack spellAttack;
 
+    //------КД -----------------
     public float AttackCoolDown;
     public float AbilityCoolDown;
     public float UltimateCoolDown;
@@ -23,6 +25,7 @@ public class Attack : MonoBehaviour
     private bool canAttack;
     private bool canAbility;
     private bool canUltimate;
+
 
     void Start()
     {

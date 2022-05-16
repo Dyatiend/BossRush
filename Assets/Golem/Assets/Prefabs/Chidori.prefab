@@ -60,7 +60,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6f4bda99494481a4c8eb97b4350ef8f8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.756
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -216,7 +216,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
+      propertyPath: NoiseModule.damping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
+      propertyPath: NoiseModule.remapEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
       propertyPath: NoiseModule.strength.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
+      propertyPath: ShapeModule.radiusThickness
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
@@ -228,6 +244,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
+      propertyPath: TrailModule.generateLightingData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
       propertyPath: NoiseModule.strengthY.minMaxState
       value: 3
       objectReference: {fileID: 0}
@@ -237,11 +257,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
       propertyPath: TrailModule.widthOverTrail.scalar
-      value: 4
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
       propertyPath: TrailModule.widthOverTrail.minScalar
-      value: 2
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 198866534812435342, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
       propertyPath: TrailModule.widthOverTrail.minMaxState
