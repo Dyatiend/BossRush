@@ -2,30 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Скрипт для камеры (камера следует за игроком)
 public class PlayerFollow : MonoBehaviour
 {
     public Transform playerTransform;
 
     private Vector3 cameraOffset;
 
-    public bool lookAtPlayer = false;
-
-    [Range(0.1f, 1.0f)]
-    public float SmoothFactor = 0.5f;
-
-    // Start is called before the first frame update
+	// Вычитсляется сдвиг камеры отностиельно персонажа
     void Start()
     {
         cameraOffset = transform.position - playerTransform.position;
     }
 
-    // Update is called once per frame
+	// Перемещает камеру за персонажем каждый кадр с учетом сдвига
     void LateUpdate()
     {
         Vector3 newPos = playerTransform.position + cameraOffset;
 
-        transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
-
-        if (lookAtPlayer) transform.LookAt(playerTransform);
+        transform.position = Vector3.Slerp(transform.position, newPos, 1);
     }
 }
