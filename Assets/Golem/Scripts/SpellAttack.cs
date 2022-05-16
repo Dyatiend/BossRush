@@ -8,7 +8,7 @@ public class SpellAttack : MonoBehaviour
 
     public GameObject projectile;
     public Transform projectilePoint;
-
+    
     public float timeBetweenAttacks;
     private State state;
 
@@ -26,14 +26,14 @@ public class SpellAttack : MonoBehaviour
 
     public void Attack()
     {
-        animator.SetTrigger("Spell");
+        Invoke(nameof(setAnimation), 0.7f);
         
 
         state.ChangeState(State.States.ABILITY);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         animator.SetFloat("Velocity", 0);
 
-        Invoke(nameof(CreateFireball), 0.4f);
+        CreateFireball();
         Invoke(nameof(Reload), timeBetweenAttacks);
     }
 
@@ -45,5 +45,10 @@ public class SpellAttack : MonoBehaviour
     public void Reload()
     {
         state.ChangeState(State.States.IDLE);
+    }
+
+    private void setAnimation()
+    {
+        animator.SetTrigger("Spell");
     }
 }
