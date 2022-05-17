@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 // Скрипт передвижения (только для игрока)
 public class Locomotion : MonoBehaviour
 {
