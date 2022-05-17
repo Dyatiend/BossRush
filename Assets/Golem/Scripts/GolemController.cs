@@ -9,6 +9,7 @@ public class GolemController : MonoBehaviour
     public float walkAnimationSpeed;
     public Vector3 velocity;
     private State state;
+    
 
     private Rigidbody rigidbody;
     private Animator animator;

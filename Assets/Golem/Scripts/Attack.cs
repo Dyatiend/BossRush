@@ -26,7 +26,7 @@ public class Attack : MonoBehaviour
     private bool canAbility;
     private bool canUltimate;
 
-
+    public Transform laser;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -54,21 +54,35 @@ public class Attack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
+            RotateChar();
             canAttack = false;
             simpleAttack.Attack();
         }
         if (Input.GetKeyDown(KeyCode.Q) && canUltimate)
         {
+            RotateChar();
             canUltimate = false;
             megaPunch.Attack();          
         }
         if (Input.GetKeyDown(KeyCode.E) && canAbility)
         {
+            RotateChar();
             canAbility = false;
             spellAttack.Attack();        
         }
 
         countCooldown();
+    }
+
+    public void RotateChar()
+    {
+        Vector3 forward = laser.transform.position - transform.position;
+        Vector3 upward = Vector3.up;
+
+        Quaternion newRotation = Quaternion.LookRotation(forward, upward);
+        newRotation.z = 0.0f;
+        newRotation.x = 0.0f;
+        transform.rotation = newRotation;
     }
 
     private void countCooldown()
