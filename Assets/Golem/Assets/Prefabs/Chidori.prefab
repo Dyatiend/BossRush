@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8880727007147690981}
   - component: {fileID: 8117836104389083307}
-  - component: {fileID: -7826051956748321641}
+  - component: {fileID: 7375331115674348167}
   m_Layer: 0
   m_Name: Chidori
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 6
   TimeDestroy: 0
---- !u!82 &-7826051956748321641
+--- !u!82 &7375331115674348167
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6f4bda99494481a4c8eb97b4350ef8f8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.756
+  m_Volume: 0.565
   m_Pitch: 1
   Loop: 0
   Mute: 0

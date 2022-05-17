@@ -280,7 +280,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141702380}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.64, z: 0.7}
@@ -293,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141702380}
   m_LocalRotation: {x: 0.12009146, y: -0.14245509, z: -0.116635084, w: 0.97554135}
-  m_LocalPosition: {x: 0.252, y: 1.475, z: 0.676}
+  m_LocalPosition: {x: -0.03, y: 0.75, z: -0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -602,15 +602,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2987437885464668138, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.0000029882078
+      value: -0.0000029669782
       objectReference: {fileID: 0}
     - target: {fileID: 2987437885464668138, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.0000003201651
+      value: -0.0000003178905
       objectReference: {fileID: 0}
     - target: {fileID: 2987437885464668138, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.0000019209908
+      value: -0.0000019073433
       objectReference: {fileID: 0}
     - target: {fileID: 3209660629809869843, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -626,15 +626,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3393154777153272488, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.000002241156
+      value: 0.0000022252339
       objectReference: {fileID: 0}
     - target: {fileID: 3393154777153272488, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.00000069369094
+      value: 0.00000068876267
       objectReference: {fileID: 0}
     - target: {fileID: 3393154777153272488, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.00000026680434
+      value: 0.00000026490883
       objectReference: {fileID: 0}
     - target: {fileID: 4330094614076497766, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -851,8 +851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 141702380}
-  AttackCoolDown: 0
-  AbilityCoolDown: 10
+  AttackCoolDown: 1
+  AbilityCoolDown: 5
   UltimateCoolDown: 20
 --- !u!114 &805997221
 MonoBehaviour:
@@ -896,6 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
   slash: {fileID: 630850513}
+  attackSound: {fileID: 0}
 --- !u!114 &805997224
 MonoBehaviour:
   m_ObjectHideFlags: 0

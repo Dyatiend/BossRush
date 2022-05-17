@@ -9,8 +9,10 @@ public class SimpleAttack : MonoBehaviour
 
     public float timeBetweenAttacks;
 
-    //----- След от удара
+    //След от удара
     public GameObject slash;
+
+    public AudioSource attackSound;
 
     void Start()
     {

@@ -5,6 +5,7 @@ public class Chidori : MonoBehaviour
     public int Speed;
     public int TimeDestroy;
     Vector3 beginPos;
+
     private AudioSource projectileSound;
     private bool canMove;
 
