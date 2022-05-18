@@ -2931,6 +2931,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -982691710935886992, guid: 80237b6b133fb49c3b3b745d759ca2ce, type: 3}
+      propertyPath: healthPoints
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3766498589105207039, guid: 80237b6b133fb49c3b3b745d759ca2ce, type: 3}
       propertyPath: m_Name
       value: Peepob_Boss
@@ -5109,7 +5113,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280056827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12663cd06cb2c4648bb8ba33bcc91d36, type: 3}
+  m_Script: {fileID: 11500000, guid: 05baa5cbb4329e940bfd841d3ad1104c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1289207087

@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 2702131536447375674}
   - component: {fileID: 2702131536447375653}
   - component: {fileID: 2702131536447375652}
-  - component: {fileID: 2702131536447375655}
+  - component: {fileID: 9194519306230506397}
   m_Layer: 5
   m_Name: EscapeMenu
   m_TagString: Menu
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2702131536447375655
+--- !u!114 &9194519306230506397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -536,11 +536,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2702131536447375654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f47591305ec18354ca386a0b24093907, type: 3}
+  m_Script: {fileID: 11500000, guid: 77ae7421c61f858459c0143faa61fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 0}
 --- !u!1 &2702131536823478836
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,8 +660,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2702131536447375655}
-        m_TargetAssemblyTypeName: MenuControls, Assembly-CSharp
+      - m_Target: {fileID: 9194519306230506397}
+        m_TargetAssemblyTypeName: EscapeControls, Assembly-CSharp
         m_MethodName: ExitPressed
         m_Mode: 1
         m_Arguments:

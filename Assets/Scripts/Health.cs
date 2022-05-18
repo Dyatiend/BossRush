@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     public int healthPoints = 100;
     public float deathTime = 2f;
+
+    private static int LOSER_SCENE = 5;
 
     private Animator animator;
     private PlayerState state;
@@ -28,6 +31,16 @@ public class Health : MonoBehaviour
     {
         animator.SetTrigger("Death");
         state.ChangeState(PlayerState.States.DEAD);
-        Destroy(gameObject, deathTime);
+        if(gameObject.CompareTag("Player")) {
+             Invoke(nameof(ChangeScene), deathTime);
+        }
+        else if(gameObject.CompareTag("Boss")) {
+            Debug.Log("Открыть дверь");
+            Destroy(gameObject, deathTime);
+        }
+    }
+
+    private void ChangeScene() {
+        SceneManager.LoadScene(LOSER_SCENE);
     }
 }

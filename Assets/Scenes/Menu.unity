@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 240594285}
   - component: {fileID: 240594286}
+  - component: {fileID: 240594287}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -174,6 +175,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 3527852853020857735, guid: 99c5e0dd75773684e8c86a5729410b0e, type: 3}
   player2: {fileID: 1652686296742888544, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+--- !u!114 &240594287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240594284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ae7421c61f858459c0143faa61fb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &383754547
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,8 +737,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 240594286}
-        m_TargetAssemblyTypeName: MenuControls, Assembly-CSharp
+      - m_Target: {fileID: 240594287}
+        m_TargetAssemblyTypeName: EscapeControls, Assembly-CSharp
         m_MethodName: ExitPressed
         m_Mode: 1
         m_Arguments:
