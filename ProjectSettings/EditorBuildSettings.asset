@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Peepob/Scenes/PeepobScene.unity
     guid: b8430a1eae27a8f46ac3c90d08b66f53
   - enabled: 1
-    path: Assets/Peepob/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
     path: Assets/VoidPresence/Scenes/VoidPresenceScene.unity
     guid: c3cf1c0c804dd8744a07326282f0a4f6
+  - enabled: 1
+    path: Assets/Peepob/Scenes/SampleScene.unity
+    guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/Scenes/WinnerScene.unity
     guid: 753c8bcd6b734a749bfd9f9b978d222a
