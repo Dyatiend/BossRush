@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: New VFX
+  m_Name: SlashEffect
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -70,7 +70,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New VFX
+  m_Name: SlashEffect
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
@@ -1236,7 +1236,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":4.9700493812561039,"g":1.1618765592575074,"b":0.2602119445800781,"a":11.0}'
+      m_SerializableObject: '{"r":4.591230869293213,"g":0.884549081325531,"b":0.0,"a":11.0}'
     m_Space: 2147483647
   m_Property:
     name: _Color
@@ -3153,7 +3153,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":2.9188342094421388,"g":0.0,"b":0.027724826708436014,"a":1.0}'
+      m_SerializableObject: '{"r":11.696685791015625,"g":0.3061959743499756,"b":0.0,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: _Color

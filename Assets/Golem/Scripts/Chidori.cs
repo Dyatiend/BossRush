@@ -32,20 +32,14 @@ public class Chidori : MonoBehaviour
     }
 
     void Update()
-    {
-        if (canMove)
-        {
-            transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-        }
-
+    {       
         RaycastHit hit;
 
         if (Physics.Linecast(beginPos, transform.position, out hit))
-        {
-            
-            if (hit.transform.name != "Chidori(Clone)")
+        {           
+            if (hit.transform.name != "Chidori(Clone)" && hit.transform.name != "Tornado(Clone)")
             {
-                print(hit.transform.name);
+                //print(hit.transform.name);
                 canMove = false;
 
                 StartCoroutine(destroyEffect(electricity));
@@ -55,6 +49,11 @@ public class Chidori : MonoBehaviour
         }
 
         Invoke(nameof(DestroyChidori), TimeDestroy);
+
+        if (canMove)
+        {
+            transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+        }
     }
 
 
@@ -70,22 +69,26 @@ public class Chidori : MonoBehaviour
 
     IEnumerator destroyEffect(ParticleSystem electricity)
     {
-        electricity.startLifetime = 0.4f;
         var shape = electricity.shape;
         shape.radius = 2;
-        electricity.emissionRate = 100;
-        yield return new WaitForSeconds(0.2f);
+        electricity.emissionRate = 150;
+
+        yield return new WaitForSeconds(0.5f);
+        collider.radius = 1.2f;
+        electricity.startLifetime = 1f;
         shape.radius = 4;
-        electricity.emissionRate = 40;
+        electricity.emissionRate = 100;
+
         yield return new WaitForSeconds(0.3f);
+        collider.radius = 1.4f;
         shape.radius = 8;
-        electricity.emissionRate = 10;
+        electricity.emissionRate = 50;
+
         yield return new WaitForSeconds(0.3f);
+        collider.radius = 1.8f;
         shape.radius = 18;
-        electricity.emissionRate = 4;
+        electricity.emissionRate = 10;
     }
-
-
-
-
 }
+
+
