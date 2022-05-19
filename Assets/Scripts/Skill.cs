@@ -32,11 +32,15 @@ public abstract class Skill : MonoBehaviour
     //Должен ли выполняться поворот персонажа в сторону курсора мыши; метод-константа
     public abstract bool NeedsMouseRotation();
     
-    //Время в секундах, необходимое для перезарядки скилла; метод-константа
-    protected abstract float ReloadTime();
-    
     //Время в секундах, ожидаемое между активацией скилла и его выполнением (например, для того чтобы дать анимации проиграться); метод-константа
     protected abstract float HoldUpTime();
+    
+    //Время в секундах, ожидаемое между активацией скилла и его выполнением (например, для того чтобы дать анимации проиграться); метод-константа
+    protected abstract float ActiveTime();
+    
+    //Время в секундах, необходимое для перезарядки скилла; метод-константа
+    protected abstract float ReloadTime();
+
 
     //Действие, выполняемое скиллом, его "мясо"
     protected abstract void Action();
@@ -68,13 +72,18 @@ public abstract class Skill : MonoBehaviour
 
         onCoolDown = true;
         
-        Invoke(nameof(Reload), ReloadTime());
         Invoke(nameof(Action), HoldUpTime());
+        Invoke(nameof(Finish), ActiveTime());
+        Invoke(nameof(Reload), ReloadTime());
     }
 
     private void Reload()
     {
         onCoolDown = false;
+    }
+
+    private void Finish()
+    {
         state.ChangeState(State.States.IDLE);
     }
 }
