@@ -73,8 +73,8 @@ public abstract class Skill : MonoBehaviour
         onCoolDown = true;
         
         Invoke(nameof(Action), HoldUpTime());
-        Invoke(nameof(Finish), ActiveTime());
-        Invoke(nameof(Reload), ReloadTime());
+        Invoke(nameof(Finish), HoldUpTime() + ActiveTime());
+        Invoke(nameof(Reload), HoldUpTime() + ActiveTime() + ReloadTime());
     }
 
     private void Reload()
