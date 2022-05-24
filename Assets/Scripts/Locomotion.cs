@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 // Скрипт передвижения (только для игрока)
 public class Locomotion : MonoBehaviour
 {
-    public float moveSpeed;
-    public float rotationSpeed;
-    public float walkAnimationSpeed; // Может быть стоит убрать, т.к. здесь можно только замедлить анимацию, а в AnimatorController и замедлить, и ускорить
+    public float moveSpeed = 10;
+    public float rotationSpeed = 10;
+    public float walkAnimationSpeed = 1; // Может быть стоит убрать, т.к. здесь можно только замедлить анимацию, а в AnimatorController и замедлить, и ускорить
     public Vector3 velocity;
     public GameObject camera;
 
