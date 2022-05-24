@@ -7,7 +7,7 @@ public class ProjectileTranslate : MonoBehaviour
     public float speed = 0.1f; // Скорость полета
 
 	// Каждый кадр перемещает объект вперед с заданной скоростью
-    void FixedUpdate () {
+    public void FixedUpdate () {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
