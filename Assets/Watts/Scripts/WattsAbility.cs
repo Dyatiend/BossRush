@@ -40,6 +40,10 @@ namespace Watts.Scripts
             Targeting targeting = GetComponent<Targeting>();
             targeting.ConfigureTargetingAs(gameObject.tag);
             enemy = GameObject.FindWithTag(targeting.TargetTag);
+            if (enemy == null)
+            {
+                return;
+            }
             rigidbody = GetComponent<Rigidbody>();
 
             gameObject.GetComponent<Collider>().isTrigger = true;

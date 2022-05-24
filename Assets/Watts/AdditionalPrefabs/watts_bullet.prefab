@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 2538517064932918120}
   - component: {fileID: 6817361142109870516}
   - component: {fileID: 5382159760044170420}
+  - component: {fileID: 1222677696666020926}
+  - component: {fileID: 8414570076391083215}
+  - component: {fileID: -4211612911436135929}
   m_Layer: 0
   m_Name: watts_bullet
   m_TagString: Untagged
@@ -95,7 +98,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2174960498314702114}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.0073800734
@@ -112,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2187c9f2d34e9d983ffe89cb794060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfter: 1
+  destroyAfter: 1.8
 --- !u!114 &6817361142109870516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +141,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 879fd364f46b479ba7eec21208cb75f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1222677696666020926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174960498314702114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f98ef2a616647f2a02b8c01d33c79b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  dealingDamage: 40
+--- !u!54 &8414570076391083215
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174960498314702114}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-4211612911436135929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174960498314702114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d9721e11b54d538a9001735301039c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1

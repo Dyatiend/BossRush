@@ -24,7 +24,7 @@ namespace Watts.Scripts
 
         protected override float ReloadTime()
         {
-            return 10f;
+            return 0; //FIXME
         }
 
         protected override float HoldUpTime()
@@ -60,7 +60,7 @@ namespace Watts.Scripts
                 Targeting targeting = fired.GetComponent<Targeting>();
                 targeting.ConfigureTargetingAs(gameObject.tag);
 
-                angle += angleStep + i*0.02f;
+                angle += angleStep + i * 0.002f;
 
                 yield return wait;
             }

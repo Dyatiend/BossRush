@@ -34,11 +34,23 @@ public class WattsAttack : Skill
 
     protected override void Action()
     {
+        float arkRadius = 1f;
+        float startAngle = -50f;
+        
         Vector3 origin = gameObject.transform.position + Vector3.up * 1.2f + transform.TransformDirection(Vector3.forward) * 0.5f;
-        GameObject slash = Instantiate(slashCollider, origin + transform.TransformDirection(Vector3.right), Quaternion.LookRotation(transform.TransformDirection(Vector3.right)));
+        GameObject slash = Instantiate(slashCollider, origin + transform.TransformDirection(SphericalToCartesian(arkRadius, Mathf.Deg2Rad * startAngle, 0)), Quaternion.LookRotation(transform.TransformDirection(SphericalToCartesian(arkRadius, Mathf.Deg2Rad * startAngle, 0))));
         SlashRotate r = slash.GetComponent<SlashRotate>();
         r.pivot = origin;
         slash.GetComponent<Targeting>().ConfigureTargetingAs(gameObject.tag);
         slash.GetComponent<ObjectLifetime>().destroyAfter = r.duration;
+    }
+    
+    public static Vector3 SphericalToCartesian(float radius, float polar, float elevation){
+        Vector3 outCart = Vector3.zero;
+        float a = radius * Mathf.Cos(elevation);
+        outCart.x = a * Mathf.Cos(polar);
+        outCart.y = radius * Mathf.Sin(elevation);
+        outCart.z = a * Mathf.Sin(polar);
+        return outCart;
     }
 }
