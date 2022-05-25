@@ -5424,6 +5424,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1842820763934855210, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820763934855210, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820763934855210, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820764739673820, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820764739673820, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820765046534312, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820765046534312, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820765046534312, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820765481889534, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842820765481889534, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04dc91c7c60d18449b090eb9e3e1b5d9, type: 3}
 --- !u!4 &1094958984 stripped
@@ -10875,7 +10915,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7203089359649319777, guid: fb20414946578fe4a8cbec1c926fe11b, type: 3}
       propertyPath: healthPoints
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7203089359649319782, guid: fb20414946578fe4a8cbec1c926fe11b, type: 3}
       propertyPath: m_Name
