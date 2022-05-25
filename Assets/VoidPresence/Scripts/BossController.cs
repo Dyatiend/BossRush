@@ -24,11 +24,13 @@ public class BossController : MonoBehaviour
         attack = GetComponent<Attack>();
         ability = GetComponent<Ability>();
         ultimate = GetComponent<BossUltimate>();
+
+        agent.enabled = false;
     }
 
     void Update()
     {
-        if(state.CheckState(PlayerState.States.IDLE) || state.CheckState(PlayerState.States.RUN))
+        if((state.CheckState(PlayerState.States.IDLE) || state.CheckState(PlayerState.States.RUN)) && agent.enabled)
         {
             if (Vector3.Distance(transform.position, target.position) >= 15)
             {
