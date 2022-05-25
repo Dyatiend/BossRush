@@ -16,11 +16,13 @@ public class BossController : MonoBehaviour
 
     void Start()
     {
-        nextDecisionTime = Time.time;
-        agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+
+        animator = GetComponent<Animator>();
         state = GetComponent<State>();
         locomotion = GetComponent<Locomotion>();
+        
         Skill[] addedSkills = GetComponents<Skill>();
         foreach (Skill skill in addedSkills)
         {
@@ -33,6 +35,8 @@ public class BossController : MonoBehaviour
                 throw new ConstraintException("Attempting to create a character with multiple skills of the same type");
             }
         }
+        
+        nextDecisionTime = Time.time;
     }
 
 
@@ -52,16 +56,17 @@ public class BossController : MonoBehaviour
                 available.Add(skill);
             }
         }
+        //print(available.Count);
+        animator.SetFloat("Velocity", GetComponent<Rigidbody>().velocity.magnitude * 3);
 
-        if (available.Count == 0 || Random.value < 0.7f)
+        if (available.Count == 0 || Random.value < 0.3f)
         {
-            agent.SetDestination(target.position);
-            transform.LookAt(target.position);
-            animator.SetFloat("Velocity", GetComponent<Rigidbody>().velocity.magnitude * 3);
+            agent.isStopped = false;
         }
         else
         {
-            agent.SetDestination(transform.position);
+            agent.isStopped = true;
+            //agent.SetDestination(transform.position);
             Skill performing = available[Random.Range(0, available.Count)];
             if (performing.NeedsMouseRotation())
             {
@@ -69,11 +74,13 @@ public class BossController : MonoBehaviour
             }
             performing.Perform();
         }
-        nextDecisionTime = nextDecisionTime + 4f;
+        nextDecisionTime = Time.time + 4f;
     }
 
     void FixedUpdate()
     {
+        agent.SetDestination(target.position);
+        transform.LookAt(agent.destination);
         /*if ((Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal") != 0.0f) && 
             (state.CheckState(State.States.IDLE) || state.CheckState(State.States.RUN)))
         {

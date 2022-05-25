@@ -87,7 +87,7 @@ public abstract class Skill : MonoBehaviour
         state.ChangeState(State.States.IDLE);
     }
 
-    public bool BossUseConditions()
+    public virtual bool BossUseConditions()
     {
         return !onCoolDown;
     }

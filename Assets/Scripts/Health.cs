@@ -5,7 +5,8 @@ using UnityEngine;
 // Здоровье
 public class Health : MonoBehaviour
 {
-    public int healthPoints = 100;
+    public int maxHealhPoints = 100;
+    public int healthPoints;
     public float deathTime = 2f; // Время, которое труп пролежит на земле
 
     private Animator animator;
@@ -13,6 +14,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        healthPoints = maxHealhPoints;
         animator = GetComponent<Animator>();
         state = GetComponent<State>();
     }
@@ -24,6 +26,15 @@ public class Health : MonoBehaviour
 
         if (healthPoints <= 0) Invoke(nameof(Destroy), .5f);
 
+    }
+
+    // Лечение
+    public void Heal(int amount)
+    {
+        healthPoints += amount;
+
+        if (healthPoints >= maxHealhPoints)
+            healthPoints = maxHealhPoints;
     }
 
 	// Уничтожение объекта с задержкой deathTime и проигрывание анимации смерти
