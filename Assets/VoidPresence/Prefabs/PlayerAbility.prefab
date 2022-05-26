@@ -9706,7 +9706,7 @@ GameObject:
   - component: {fileID: 7704185130814637292}
   m_Layer: 0
   m_Name: PlayerAbility
-  m_TagString: Untagged
+  m_TagString: AbilityObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

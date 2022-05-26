@@ -11,8 +11,13 @@ public class BossAttackImpact : MonoBehaviour
         if (collider.tag == ("Player"))
         {
             collider.GetComponent<Health>().TakeDamage(dealingDamage);
+            Hit(collider);
         }
-        if (collider.tag != ("Boss"))
+    }
+
+    public void Hit(Collider collider)
+    {
+        if (collider.tag != ("Boss") && collider.tag != ("AbilityObject"))
         {
             GetComponent<ProjectileHit>().PlayHitAnim();
             GetComponent<ProjectileTranslate>().speed = 0f;

@@ -19278,7 +19278,7 @@ GameObject:
   - component: {fileID: 680023375313267422}
   m_Layer: 0
   m_Name: PlayerUltimate
-  m_TagString: Untagged
+  m_TagString: AbilityObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

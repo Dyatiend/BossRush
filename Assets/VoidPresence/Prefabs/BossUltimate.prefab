@@ -38641,7 +38641,7 @@ GameObject:
   - component: {fileID: 5450763645464920265}
   m_Layer: 0
   m_Name: BossUltimate
-  m_TagString: Untagged
+  m_TagString: AbilityObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
