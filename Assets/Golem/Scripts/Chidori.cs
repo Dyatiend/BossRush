@@ -12,16 +12,20 @@ public class Chidori : MonoBehaviour
 
     private SphereCollider collider;
     private Rigidbody rb;
+    private Light light;
 
     public ParticleSystem electricity;
+    private bool lighting;
 
     void Start()
     {
         beginPos = transform.position;
         canMove = false;
+        lighting = false;
 
         collider = GetComponent<SphereCollider>();
         rb = GetComponent<Rigidbody>();
+        light = GetComponentInChildren<Light>();
         //electricity = GetComponentInChildren<GameObject>().GetComponent<ParticleSystem>(); 
 
         projectileSound = GetComponent<AudioSource>();
@@ -34,7 +38,11 @@ public class Chidori : MonoBehaviour
     void Update()
     {       
         RaycastHit hit;
-
+        if (!lighting)
+        {
+            StartCoroutine(lightEffect());
+        }
+       
         if (Physics.Linecast(beginPos, transform.position, out hit))
         {           
             if (hit.transform.name != "Chidori(Clone)" && hit.transform.name != "Tornado(Clone)")
@@ -89,6 +97,20 @@ public class Chidori : MonoBehaviour
         shape.radius = 18;
         electricity.emissionRate = 10;
     }
+
+    IEnumerator lightEffect()
+    {
+        lighting = true;
+        light.intensity = 12;
+        yield return new WaitForSeconds(0.1f);
+        light.intensity = 8;
+        yield return new WaitForSeconds(0.1f);
+        light.intensity = 14;
+        yield return new WaitForSeconds(0.1f);
+        light.intensity = 6;
+        lighting = false;
+    }
+
 }
 
 
