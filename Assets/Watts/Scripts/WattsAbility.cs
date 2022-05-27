@@ -89,5 +89,11 @@ namespace Watts.Scripts
 
             }
         }
+
+        public override bool BossUseConditions()
+        {
+            Transform target = GameObject.FindGameObjectWithTag("Player").transform;
+            return base.BossUseConditions() && Vector3.Distance(transform.position, target.position) < 20 ;
+        }
     }
 }

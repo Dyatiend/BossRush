@@ -12,7 +12,7 @@ public class WattsAttack : Skill
 
     public override bool NeedsMouseRotation()
     {
-        return false;
+        return true;
     }
 
     protected override float ActiveTime()
@@ -52,5 +52,11 @@ public class WattsAttack : Skill
         outCart.y = radius * Mathf.Sin(elevation);
         outCart.z = a * Mathf.Sin(polar);
         return outCart;
+    }
+
+    public override bool BossUseConditions()
+    {
+        Transform target = GameObject.FindGameObjectWithTag("Player").transform;
+        return base.BossUseConditions() && Vector3.Distance(transform.position, target.position) < 3;
     }
 }
