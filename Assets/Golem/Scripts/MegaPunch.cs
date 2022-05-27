@@ -45,7 +45,7 @@ public class MegaPunch : MonoBehaviour
 
     void CreateTornado()
     {
-        GameObject fireball = Instantiate(tornado, tornadoPoint.position, Quaternion.Euler(0, 0, 0));
+        GameObject fireball = Instantiate(tornado, tornadoPoint.position, Quaternion.Euler(-90, 0, 0));
     }
 
     void playSound()
