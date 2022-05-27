@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Здоровье
 public class Health : MonoBehaviour
@@ -8,6 +9,8 @@ public class Health : MonoBehaviour
     public int maxHealhPoints = 100;
     public int healthPoints;
     public float deathTime = 2f; // Время, которое труп пролежит на земле
+
+    private int LOSER_SCENE = 4;
 
     private Animator animator;
     private State state;
@@ -42,6 +45,15 @@ public class Health : MonoBehaviour
     {
         animator.SetTrigger("Death");
         state.ChangeState(State.States.DEAD);
-        Destroy(gameObject, deathTime);
+        if(gameObject.CompareTag("Player")) {
+             Invoke(nameof(ChangeScene), deathTime);
+        }
+        else if(gameObject.CompareTag("Boss")) {
+            Destroy(gameObject, deathTime);
+        }
+    }
+
+    private void ChangeScene() {
+        SceneManager.LoadScene(LOSER_SCENE);
     }
 }
