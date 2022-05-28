@@ -29161,7 +29161,7 @@ GameObject:
   - component: {fileID: -9069305652056465599}
   - component: {fileID: 8081460039877550620}
   - component: {fileID: 7547907906672915535}
-  - component: {fileID: 4647316011056568937}
+  - component: {fileID: 3149073380504388044}
   m_Layer: 0
   m_Name: BossAttack
   m_TagString: Untagged
@@ -29245,7 +29245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dealingDamage: 10
---- !u!114 &4647316011056568937
+--- !u!114 &3149073380504388044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29254,7 +29254,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8554603005536856708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75077f25c57c6154fb66a81b313c455f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d98ae6d42f154cd99ce0b1f92f4a2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20

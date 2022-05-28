@@ -2931,14 +2931,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -982691710935886992, guid: 80237b6b133fb49c3b3b745d759ca2ce, type: 3}
-      propertyPath: healthPoints
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: -982691710935886992, guid: 80237b6b133fb49c3b3b745d759ca2ce, type: 3}
-      propertyPath: maxHealhPoints
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3766498589105207039, guid: 80237b6b133fb49c3b3b745d759ca2ce, type: 3}
       propertyPath: m_Name
       value: Peepob_Boss
@@ -2987,9 +2979,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4072418802607922042, guid: 80237b6b133fb49c3b3b745d759ca2ce, type: 3}
-    - {fileID: 4072418802607922043, guid: 80237b6b133fb49c3b3b745d759ca2ce, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80237b6b133fb49c3b3b745d759ca2ce, type: 3}
 --- !u!1 &664134137
 GameObject:

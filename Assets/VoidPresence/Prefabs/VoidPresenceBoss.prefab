@@ -1661,11 +1661,11 @@ GameObject:
   - component: {fileID: 8014131665532491315}
   - component: {fileID: 7203089359649319777}
   - component: {fileID: 7203089359649319780}
-  - component: {fileID: 4019713589471091472}
   - component: {fileID: 4684642994732953324}
   - component: {fileID: 1141540231932569117}
   - component: {fileID: 3763237906908587928}
-  - component: {fileID: 820422719476840958}
+  - component: {fileID: 8362827789514014047}
+  - component: {fileID: 7604569769992712782}
   m_Layer: 0
   m_Name: VoidPresenceBoss
   m_TagString: Boss
@@ -1778,18 +1778,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4019713589471091472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7203089359649319782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1704cfc382d398b4192d9707d1356a1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4684642994732953324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1841,7 +1829,7 @@ MonoBehaviour:
   abilityPoint: {fileID: 8014131665759128862}
   timeBeforeAttack: 1.35
   timeBetweenAttacks: 2.75
---- !u!114 &820422719476840958
+--- !u!114 &8362827789514014047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1850,7 +1838,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7203089359649319782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1239b75b9b249847a5859c3e82cf802, type: 3}
+  m_Script: {fileID: 11500000, guid: deaa224a042914304afbbe63c7d8da1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7604569769992712782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7203089359649319782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bcde0c9e2d84bc480f4da265ced3ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7865756864730846321

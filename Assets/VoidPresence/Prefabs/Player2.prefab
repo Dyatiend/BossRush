@@ -237,18 +237,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1652686297819393886}
-    - target: {fileID: 3685121236618014518, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 1652686297819393886}
-    - target: {fileID: 3685121236618014518, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-      propertyPath: poiter
-      value: 
-      objectReference: {fileID: 1652686296066940810}
-    - target: {fileID: 3685121236618014522, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 1652686297819393886}
     - target: {fileID: 3796137837194119382, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -293,29 +281,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4604165275457180267, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-      propertyPath: maxHealhPoints
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 4604165275457180268, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
       propertyPath: m_Name
       value: VoidPresencePlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 4604165275457180268, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5075717690055425548, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-      propertyPath: poiter
-      value: 
-      objectReference: {fileID: 1652686296066940810}
-    m_RemovedComponents:
-    - {fileID: 3685121236618014522, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-    - {fileID: 3685121236618014517, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-    - {fileID: 3685121236618014518, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-    - {fileID: 3685121236618014516, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-    - {fileID: 3685121236618014514, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
-    - {fileID: 3685121236618014513, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
 --- !u!1 &1886705601433845190 stripped
 GameObject:
@@ -327,6 +297,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3796137837194119382, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
   m_PrefabInstance: {fileID: 2723458772711534506}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5101645110378119124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886705601433845190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baddd4dc9d02940cb9715db9775e3720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poiter: {fileID: 1652686296066940810}
 --- !u!1001 &4330098330348219028
 PrefabInstance:
   m_ObjectHideFlags: 0

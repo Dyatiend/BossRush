@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 4072418802607922045}
   - component: {fileID: 4072418802607922046}
   - component: {fileID: -982691710935886992}
-  - component: {fileID: 5009776357731641029}
+  - component: {fileID: 928490028}
   m_Layer: 0
   m_Name: Peepob_Boss
   m_TagString: Boss
@@ -609,7 +609,7 @@ MonoBehaviour:
   maxHealhPoints: 100
   healthPoints: 1000
   deathTime: 5
---- !u!114 &5009776357731641029
+--- !u!114 &928490028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3766498589105207039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1239b75b9b249847a5859c3e82cf802, type: 3}
+  m_Script: {fileID: 11500000, guid: deaa224a042914304afbbe63c7d8da1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3870275821160588967

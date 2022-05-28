@@ -324,7 +324,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5763521549337229536, guid: 39b32882fcbf148efb00bf3e0b980e48, type: 3}
   m_PrefabInstance: {fileID: 3527852852777727269}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3585155811288406895
+--- !u!114 &2648785201008619347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,7 +409,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peepob_Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5401439793908200059, guid: 57f375e97021040c28cf6a8f1428393f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57f375e97021040c28cf6a8f1428393f, type: 3}
 --- !u!1 &4338121666868601632 stripped
 GameObject:
@@ -431,5 +432,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19fe3f657941d7546836eb28434f422b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3585155811288406895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4338121666868601632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deaa224a042914304afbbe63c7d8da1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

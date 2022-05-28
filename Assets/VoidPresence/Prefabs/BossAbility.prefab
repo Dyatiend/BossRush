@@ -9703,7 +9703,7 @@ GameObject:
   - component: {fileID: -3481452619039568468}
   - component: {fileID: 6083011160010974849}
   - component: {fileID: 6293062876720444249}
-  - component: {fileID: 6892716241803791437}
+  - component: {fileID: 3755979955700487857}
   m_Layer: 0
   m_Name: BossAbility
   m_TagString: Untagged
@@ -9788,7 +9788,7 @@ MonoBehaviour:
   dealingDamage: 50
   slowing: 0.5
   slowingTime: 3
---- !u!114 &6892716241803791437
+--- !u!114 &3755979955700487857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9797,7 +9797,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271528925293773368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75077f25c57c6154fb66a81b313c455f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d98ae6d42f154cd99ce0b1f92f4a2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
