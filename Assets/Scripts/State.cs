@@ -13,7 +13,8 @@ public class State : MonoBehaviour
         ABILITY, // Сопособность (послабее)
         ULTIMATE, // Ультимативная способность (посильнее) (может быть стоит переименовать)
         DEAD,
-        STUN
+        STUN,
+        THROW,
     }
 
     private States state;
