@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EscapeMenu : MonoBehaviour
+public class EscapeMenuListener : MonoBehaviour
 {
+    public GameObject menuPrefab;
     private GameObject menu;
 
     void Start() {
         
-        menu = GameObject.FindWithTag("Menu");
+        menu = Instantiate(menuPrefab);
         menu.SetActive(false);
     }
 

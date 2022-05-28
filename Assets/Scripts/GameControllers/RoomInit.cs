@@ -4,12 +4,16 @@ using GameControllers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SpawnChar : MonoBehaviour
+public class RoomInit : MonoBehaviour
 {
     public Transform playerPoint;
     public Transform bossPoint;
+
+    public GameObject CameraHUD;
     
     private void Awake() {
+        Instantiate(CameraHUD);
+        
         Instantiate(CharacterSelectControls.playerCharacter.playerPrefab, playerPoint.position, playerPoint.rotation);
         string currentRoomName = SceneManager.GetActiveScene().name;
         if (currentRoomName != CharacterSelectControls.playerCharacter.roomName)

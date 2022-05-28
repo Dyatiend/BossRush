@@ -26,9 +26,9 @@ namespace GameControllers
         public static List<CharacterData> characters = new List<CharacterData>()
         {
             new CharacterData("VoidPresence", "VoidPresenceScene", 
-                "Assets/VoidPresence/Prefabs/Player2.prefab", "Assets/VoidPresence/Prefabs/VoidPresenceBoss.prefab"),
+                "Assets/VoidPresence/Prefabs/VoidPresencePlayerFinal.prefab", "Assets/VoidPresence/Prefabs/VoidPresenceBoss.prefab"),
             new CharacterData("Peepob", "PeepobScene", 
-                "Assets/Peepob/Prefabs/Player.prefab", "Assets/Peepob/Prefabs/Peepob_Boss.prefab")
+                "Assets/Peepob/Prefabs/PeepobPlayerFinal.prefab", "Assets/Peepob/Prefabs/Peepob_Boss.prefab")
         };
 
         public static CharacterData getByCharName(string charName)

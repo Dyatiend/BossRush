@@ -10,8 +10,6 @@ public class Health : MonoBehaviour
     public int healthPoints;
     public float deathTime = 2f; // Время, которое труп пролежит на земле
 
-    private int LOSER_SCENE = 4;
-
     private Animator animator;
     private State state;
 
@@ -54,6 +52,6 @@ public class Health : MonoBehaviour
     }
 
     private void ChangeScene() {
-        SceneManager.LoadScene(LOSER_SCENE);
+        SceneManager.LoadScene("EndGame");
     }
 }

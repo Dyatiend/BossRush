@@ -1132,8 +1132,8 @@ GameObject:
   - component: {fileID: 1781592258425701104}
   - component: {fileID: 3848235172794716615}
   - component: {fileID: 665273454509617210}
-  - component: {fileID: 1408736016794544016}
   - component: {fileID: 2081714931891360805}
+  - component: {fileID: 8516469713605995327}
   m_Layer: 0
   m_Name: VoidPresencePlayer
   m_TagString: Player
@@ -1256,7 +1256,6 @@ MonoBehaviour:
   rotationSpeed: 10
   walkAnimationSpeed: 3
   velocity: {x: 0, y: 0, z: 0}
-  camera: {fileID: 0}
 --- !u!114 &3848235172794716615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,18 +1290,6 @@ MonoBehaviour:
   abilityPoint: {fileID: 3685121236323742740}
   timeBeforeAttack: 1.35
   timeBetweenAttacks: 2.75
---- !u!114 &1408736016794544016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4604165275457180268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19fe3f657941d7546836eb28434f422b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2081714931891360805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,6 +1302,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaa224a042914304afbbe63c7d8da1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8516469713605995327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604165275457180268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baddd4dc9d02940cb9715db9775e3720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poiter: {fileID: 0}
 --- !u!1 &5095284660381247406
 GameObject:
   m_ObjectHideFlags: 0

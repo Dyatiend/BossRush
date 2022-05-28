@@ -40,8 +40,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2905236280180297401}
   - component: {fileID: 682898075008776301}
+  - component: {fileID: 5367815300650927427}
   m_Layer: 0
-  m_Name: SpawnController
+  m_Name: RoomController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,6 +78,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPoint: {fileID: 538137355511505375}
   bossPoint: {fileID: 4511765673180533471}
+  CameraHUD: {fileID: 7793006740941859700, guid: 2f0fb36cde2fc5d41af9d1a38e12a8b5, type: 3}
+--- !u!114 &5367815300650927427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038127987789977322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fe3f657941d7546836eb28434f422b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPrefab: {fileID: 2702131536447375654, guid: fa6e3ce05a8271343a46165a4a7b7f1e, type: 3}
 --- !u!1 &7491194592490278327
 GameObject:
   m_ObjectHideFlags: 0

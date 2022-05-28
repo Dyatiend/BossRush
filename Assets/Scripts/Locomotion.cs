@@ -8,7 +8,7 @@ public class Locomotion : MonoBehaviour
     public float rotationSpeed = 10;
     public float walkAnimationSpeed = 1; // Может быть стоит убрать, т.к. здесь можно только замедлить анимацию, а в AnimatorController и замедлить, и ускорить
     public Vector3 velocity;
-    public GameObject camera;
+    private GameObject camera;
 
     private Rigidbody rigidbody;
     private Animator animator;
@@ -18,6 +18,7 @@ public class Locomotion : MonoBehaviour
 	
     void Start()
     {
+        camera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         state = GetComponent<State>();
@@ -30,8 +31,8 @@ public class Locomotion : MonoBehaviour
 
         Vector3 translation = Vector3.zero;
 
-        translation = forward * camera.transform.forward;
-        translation += right * camera.transform.right;
+        translation = forward * new Vector3(camera.transform.up.x, 0, camera.transform.up.z).normalized;
+        translation += right * new Vector3(camera.transform.right.x, 0, camera.transform.right.z).normalized;
         translation.y = 0;
 
         if(translation.magnitude > 0.2f)
