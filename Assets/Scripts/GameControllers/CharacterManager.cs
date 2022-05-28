@@ -28,7 +28,9 @@ namespace GameControllers
             new CharacterData("VoidPresence", "VoidPresenceScene", 
                 "Assets/VoidPresence/Prefabs/VoidPresencePlayerFinal.prefab", "Assets/VoidPresence/Prefabs/VoidPresenceBoss.prefab"),
             new CharacterData("Peepob", "PeepobScene", 
-                "Assets/Peepob/Prefabs/PeepobPlayerFinal.prefab", "Assets/Peepob/Prefabs/Peepob_Boss.prefab")
+                "Assets/Peepob/Prefabs/PeepobPlayerFinal.prefab", "Assets/Peepob/Prefabs/Peepob_Boss.prefab"),
+            new CharacterData("Watts", "WattsScene", 
+                "Assets/Watts/WattsPlayer.prefab", "Assets/Watts/WattsBoss.prefab")
         };
 
         public static CharacterData getByCharName(string charName)
