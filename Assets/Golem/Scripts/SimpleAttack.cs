@@ -7,6 +7,11 @@ public class SimpleAttack : MonoBehaviour
     private Animator animator;
     private State state;
 
+    // Кд
+    public float AttackCoolDown;
+    private float AttackCoolDown2;
+    private bool canAttack;
+
     public float timeBetweenAttacks;
 
     //След от удара
@@ -19,15 +24,18 @@ public class SimpleAttack : MonoBehaviour
         animator = GetComponent<Animator>();
         state = GetComponent<State>();
         slash.SetActive(false);
+        AttackCoolDown2 = AttackCoolDown;
+        canAttack = false;
     }
 
     void Update()
     {
-        
+        countCooldown();
     }
 
     public void Attack()
     {
+        canAttack = false;
         animator.SetTrigger("SimpleAttack");
         StartCoroutine(slashMove());
 
@@ -43,11 +51,29 @@ public class SimpleAttack : MonoBehaviour
         state.ChangeState(State.States.IDLE);
     }
 
+    public bool canAttack_()
+    {
+        return canAttack;
+    }
+
     IEnumerator slashMove()
     {
         yield return new WaitForSeconds(0.6f);
         slash.SetActive(true);
         yield return new WaitForSeconds(0.7f);
         slash.SetActive(false);
+    }
+
+    private void countCooldown()
+    {
+        if (!canAttack)
+        {
+            AttackCoolDown2 -= Time.deltaTime;
+            if (AttackCoolDown2 < 0)
+            {
+                canAttack = true;
+                AttackCoolDown2 = AttackCoolDown;
+            }
+        }
     }
 }

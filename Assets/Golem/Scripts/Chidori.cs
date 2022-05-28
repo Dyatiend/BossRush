@@ -31,8 +31,6 @@ public class Chidori : MonoBehaviour
         projectileSound = GetComponent<AudioSource>();
         projectileSound.Play();
         Invoke(nameof(allowMove), 1f);
-
-        
     }
 
     void Update()
@@ -45,14 +43,13 @@ public class Chidori : MonoBehaviour
        
         if (Physics.Linecast(beginPos, transform.position, out hit))
         {           
-            if (hit.transform.name != "Chidori(Clone)" && hit.transform.name != "Tornado(Clone)")
+            if (hit.transform.name != "Chidori(Clone)" && hit.transform.name != "TornadoNew(Clone)")
             {
                 //print(hit.transform.name);
                 canMove = false;
 
                 StartCoroutine(destroyEffect(electricity));
-                Invoke(nameof(DestroyChidori), 1.5f);
-            
+                Invoke(nameof(DestroyChidori), 1.5f);        
             }         
         }
 

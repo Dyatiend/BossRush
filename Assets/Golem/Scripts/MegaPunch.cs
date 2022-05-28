@@ -11,22 +11,30 @@ public class MegaPunch : MonoBehaviour
     public GameObject tornado;
     public Transform tornadoPoint;
     private AudioSource sound;
-  
+
+    // ‰
+    public float UltimateCoolDown;
+    private float UltimateCoolDown2;
+    private bool canUltimate;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         state = GetComponent<State>();
         sound = GetComponent<AudioSource>();
+        canUltimate = true;
+        UltimateCoolDown2 = UltimateCoolDown;
     }
 
     
     void Update()
     {
-        
+        countCooldown();
     }
 
     public void Attack()
     {
+        canUltimate = false;
         animator.SetTrigger("MegaPunch");
 
         state.ChangeState(State.States.ULTIMATE);
@@ -42,6 +50,10 @@ public class MegaPunch : MonoBehaviour
     {
         state.ChangeState(State.States.IDLE);
     }
+    public bool canUltimate_()
+    {
+        return canUltimate;
+    }
 
     void CreateTornado()
     {
@@ -52,5 +64,18 @@ public class MegaPunch : MonoBehaviour
     {
         sound.Play();
     }
-    
+
+    private void countCooldown()
+    {
+        if (!canUltimate)
+        {
+            UltimateCoolDown2 -= Time.deltaTime;
+            if (UltimateCoolDown2 < 0)
+            {
+                canUltimate = true;
+                UltimateCoolDown2 = UltimateCoolDown;
+            }
+        }
+    }
+
 }

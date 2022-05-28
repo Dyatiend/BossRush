@@ -8,7 +8,12 @@ public class SpellAttack : MonoBehaviour
 
     public GameObject projectile;
     public Transform projectilePoint;
-    
+
+    // ‰
+    public float AbilityCoolDown;
+    private float AbilityCoolDown2;
+    private bool canAbility;
+
     public float timeBetweenAttacks;
     private State state;
 
@@ -16,19 +21,21 @@ public class SpellAttack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         state = GetComponent<State>();
+        canAbility = false;
+        AbilityCoolDown2 = AbilityCoolDown;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        countCooldown();
     }
 
     public void Attack()
     {
+        canAbility = false;
         Invoke(nameof(setAnimation), 0.7f);
         
-
         state.ChangeState(State.States.ABILITY);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         animator.SetFloat("Velocity", 0);
@@ -47,8 +54,25 @@ public class SpellAttack : MonoBehaviour
         state.ChangeState(State.States.IDLE);
     }
 
+    public bool canAbility_()
+    {
+        return canAbility;
+    }
     private void setAnimation()
     {
         animator.SetTrigger("Spell");
+    }
+
+    private void countCooldown()
+    {
+        if (!canAbility)
+        {
+            AbilityCoolDown2 -= Time.deltaTime;
+            if (AbilityCoolDown2 < 0)
+            {
+                canAbility = true;
+                AbilityCoolDown2 = AbilityCoolDown;
+            }
+        }
     }
 }
