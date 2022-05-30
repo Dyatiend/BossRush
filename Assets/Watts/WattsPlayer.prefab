@@ -1044,10 +1044,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.42785582
+  m_Radius: 0.508822
   m_Height: 1.7430296
   m_Direction: 1
-  m_Center: {x: -0.022259772, y: 0.9496603, z: 0.23061833}
+  m_Center: {x: -0.00454849, y: 0.9496603, z: 0.14712197}
 --- !u!95 &3528427456304291124
 Animator:
   serializedVersion: 3
@@ -1095,7 +1095,6 @@ MonoBehaviour:
   rotationSpeed: 10
   walkAnimationSpeed: 1
   velocity: {x: 0, y: 0, z: 0}
-  camera: {fileID: 0}
 --- !u!114 &3159397794526548074
 MonoBehaviour:
   m_ObjectHideFlags: 0

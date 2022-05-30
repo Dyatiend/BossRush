@@ -43,6 +43,12 @@ public class BossController : MonoBehaviour
     private float nextDecisionTime;
     private void Update()
     {
+        if (!agent.isStopped)
+        {
+            GetComponent<Rigidbody>().velocity = agent.velocity;
+        }
+        animator.SetFloat("Velocity", agent.velocity.magnitude/agent.speed);
+        
         if (Time.time < nextDecisionTime)
         {
             return;
@@ -57,7 +63,6 @@ public class BossController : MonoBehaviour
             }
         }
         //print(available.Count);
-        animator.SetFloat("Velocity", GetComponent<Rigidbody>().velocity.magnitude * 3);
 
         if (available.Count == 0 || Random.value < 0.3f)
         {

@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/VoidPresence/Scenes/VoidPresenceScene.unity
     guid: c3cf1c0c804dd8744a07326282f0a4f6
   - enabled: 1
+    path: Assets/Watts/WattsScene.unity
+    guid: 7bc621b9937b2e547b7589f593637514
+  - enabled: 1
     path: Assets/Scenes/WinnerScene.unity
     guid: 753c8bcd6b734a749bfd9f9b978d222a
   - enabled: 1
