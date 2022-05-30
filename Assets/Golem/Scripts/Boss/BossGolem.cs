@@ -34,6 +34,14 @@ public class BossGolem : MonoBehaviour
     {
         transform.LookAt(target.position);
         if (state.CheckState(State.States.IDLE)
+        && Vector3.Distance(transform.position, target.position) <= 15f
+        && ability.canAbility_())
+        {
+            nashAgent.SetDestination(transform.position);
+            transform.LookAt(target.position);
+            ability.Attack();
+        }
+        else if (state.CheckState(State.States.IDLE)
         && Vector3.Distance(transform.position, target.position) < 3f)
         {
             nashAgent.SetDestination(transform.position);
@@ -41,19 +49,12 @@ public class BossGolem : MonoBehaviour
             simpleAttack.Attack();
         }     
         else if (Vector3.Distance(transform.position, target.position) <= 6f
-            && Vector3.Distance(transform.position, target.position) > 3f
+            && Vector3.Distance(transform.position, target.position) > 3.7f
         && ultimate.canUltimate_() && state.CheckState(State.States.IDLE))
         {
             nashAgent.SetDestination(transform.position);
             transform.LookAt(target);
             ultimate.Attack();
-        }
-        else if (state.CheckState(State.States.IDLE)
-        && Vector3.Distance(transform.position, target.position) <= 15f
-        && ability.canAbility_()) {
-            nashAgent.SetDestination(transform.position);
-            transform.LookAt(target.position);
-            ability.Attack();
         }
         else if (state.CheckState(State.States.IDLE)
         && Vector3.Distance(transform.position, target.position) >= 3f)
