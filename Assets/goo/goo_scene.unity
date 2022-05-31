@@ -911,7 +911,7 @@ Transform:
   - {fileID: 2006248171}
   - {fileID: 934665077}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &183791165 stripped
 Transform:
@@ -1344,7 +1344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 45, y: 54.8, z: 0}
 --- !u!114 &273160987
 MonoBehaviour:
@@ -1642,7 +1642,7 @@ Transform:
   - {fileID: 1341780947}
   - {fileID: 628988165}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &360480366 stripped
 Transform:
@@ -3079,7 +3079,7 @@ Transform:
   - {fileID: 1873712435}
   - {fileID: 674023823}
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &756106431
 PrefabInstance:
@@ -6033,7 +6033,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.31132078, g: 0, b: 0.2622798, a: 1}
+  m_Color: {r: 0.9150943, g: 0.7208526, b: 0.88558924, a: 0.89411765}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -6096,7 +6096,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1812801660
 PrefabInstance:
@@ -6415,7 +6415,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1873712435 stripped
 Transform:
