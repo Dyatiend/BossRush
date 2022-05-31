@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08daab70f961a54d8760fb30cd3cc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 50
   owner: Player
   target: Boss
 --- !u!1 &8039332959074817251
@@ -314,15 +314,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.907001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2459999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.20299911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalRotation.w
@@ -724,6 +724,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.000010449508
       objectReference: {fileID: 0}
+    - target: {fileID: 9017574985893952601, guid: a68ec8c2c41b3474699060087418f223, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017574985893952601, guid: a68ec8c2c41b3474699060087418f223, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017574985893952601, guid: a68ec8c2c41b3474699060087418f223, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9140253385185518857, guid: a68ec8c2c41b3474699060087418f223, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -3.9591014
@@ -893,6 +905,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4662088359568460234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7156249954224592719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deaa224a042914304afbbe63c7d8da1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8039332957745015324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,53 +934,6 @@ MonoBehaviour:
   walkAnimationSpeed: 1
   velocity: {x: 0, y: 0, z: 0}
   laser: {fileID: 2336619349425522453}
---- !u!114 &8039332957745015335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7156249954224592719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242e03ab05f3587499e3c0362b15013b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealhPoints: 100
-  healthPoints: 0
-  deathTime: 2
---- !u!114 &8039332957745015334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7156249954224592719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9be804238cde894aa8d61a555388750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 3726960462269233029, guid: 3d3fcb625b9726943bd5a180f3369a07, type: 3}
-  projectilePoint: {fileID: 8039332959074817250}
-  AbilityCoolDown: 7
-  timeBetweenAttacks: 2.5
---- !u!114 &8039332957745015333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7156249954224592719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3bfe2c626f49434c8af082d13949a9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenAttacks: 3.5
-  tornado: {fileID: 631047333093713927, guid: 359861a4cbe0b2c4bb450bf590267a0f, type: 3}
-  tornadoPoint: {fileID: 8039332957355100876}
-  UltimateCoolDown: 12
 --- !u!114 &8039332957745015332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,6 +950,53 @@ MonoBehaviour:
   timeBetweenAttacks: 1.4
   slash: {fileID: 6621556966320834130}
   attackSound: {fileID: 0}
+--- !u!114 &8039332957745015333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7156249954224592719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3bfe2c626f49434c8af082d13949a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 3.5
+  tornado: {fileID: 631047333093713927, guid: 359861a4cbe0b2c4bb450bf590267a0f, type: 3}
+  tornadoPoint: {fileID: 8039332957355100876}
+  UltimateCoolDown: 12
+--- !u!114 &8039332957745015334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7156249954224592719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9be804238cde894aa8d61a555388750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 3726960462269233029, guid: 3d3fcb625b9726943bd5a180f3369a07, type: 3}
+  projectilePoint: {fileID: 8039332959074817250}
+  AbilityCoolDown: 7
+  timeBetweenAttacks: 2.5
+--- !u!114 &8039332957745015335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7156249954224592719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242e03ab05f3587499e3c0362b15013b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealhPoints: 1000
+  healthPoints: 0
+  deathTime: 2
 --- !u!114 &8039332957745015339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,18 +1013,6 @@ MonoBehaviour:
   rotationSpeed: 10
   walkAnimationSpeed: 1
   velocity: {x: 0, y: 0, z: 0}
---- !u!114 &8039332957745015338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7156249954224592719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6ac22115dfb68249a804cbfb4aabd2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8039332959327989124
 PrefabInstance:
   m_ObjectHideFlags: 0

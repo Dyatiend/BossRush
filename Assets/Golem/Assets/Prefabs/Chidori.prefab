@@ -178,7 +178,7 @@ MonoBehaviour:
   electricity: {fileID: 4368970893886898689}
   owner: Player
   target: Boss
-  damage: 25
+  damage: 100
 --- !u!1 &8485412717870836345
 GameObject:
   m_ObjectHideFlags: 0
