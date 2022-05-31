@@ -16,12 +16,12 @@ public class goo_ability : Skill
 
     protected override float HoldUpTime()
     {
-        return 0;
+        return delay;
     }
 
     protected override float ActiveTime()
     {
-        return 0;
+        return 2.0f;
     }
 
     protected override float ReloadTime()
@@ -31,6 +31,14 @@ public class goo_ability : Skill
 
     protected override void Action()
     {
-      
+        GameObject obj = Instantiate(jija, jija_point.position, Quaternion.LookRotation(transform.forward));
+        obj.GetComponent<Targeting>().ConfigureTargetingAs(gameObject.tag);
+        obj.GetComponent<Rigidbody>().velocity = transform.forward * speed_forward + transform.up * speed_up;
     }
+
+    public GameObject jija;
+    public Transform jija_point;
+    public float speed_up;
+    public float speed_forward;
+    public float delay;
 }
