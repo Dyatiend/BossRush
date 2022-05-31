@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6734379000935408068}
   - component: {fileID: -1359251662915232968}
   m_Layer: 0
-  m_Name: Chidori
+  m_Name: ChidoriBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,8 +176,8 @@ MonoBehaviour:
   Speed: 12
   TimeDestroy: 6
   electricity: {fileID: 4368970893886898689}
-  owner: Player
-  target: Boss
+  owner: Boss
+  target: Player
 --- !u!1 &8485412717870836345
 GameObject:
   m_ObjectHideFlags: 0

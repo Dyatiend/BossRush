@@ -18,7 +18,6 @@ public class Tornado : MonoBehaviour
         StartCoroutine(destroyEffect());
     }
 
-    
     void Update()
     {
        

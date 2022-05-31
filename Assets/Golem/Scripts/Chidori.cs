@@ -16,6 +16,8 @@ public class Chidori : MonoBehaviour
 
     public ParticleSystem electricity;
     private bool lighting;
+    public string owner;
+    public string target;
 
     void Start()
     {
@@ -35,23 +37,21 @@ public class Chidori : MonoBehaviour
 
     void Update()
     {       
-        RaycastHit hit;
+        
         if (!lighting)
         {
             StartCoroutine(lightEffect());
         }
-       
+
+        /*RaycastHit hit;
         if (Physics.Linecast(beginPos, transform.position, out hit))
         {           
             if (hit.transform.name != "Chidori(Clone)" && hit.transform.name != "TornadoNew(Clone)")
             {
                 //print(hit.transform.name);
-                canMove = false;
-
-                StartCoroutine(destroyEffect(electricity));
-                Invoke(nameof(DestroyChidori), 1.5f);        
+                       
             }         
-        }
+        }*/
 
         Invoke(nameof(DestroyChidori), TimeDestroy);
 
@@ -61,6 +61,25 @@ public class Chidori : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.name == "TornadoNew(Clone)" || other.gameObject.tag == owner)
+        {
+            return;
+        }
+        else
+        {
+            if (other.gameObject.tag == target)
+            {
+                other.gameObject.GetComponent<Health>().TakeDamage(25);
+                Debug.Log("-25 to " + target);
+            }
+            canMove = false;
+            //Debug.Log(other.name);
+            StartCoroutine(destroyEffect(electricity));
+            Invoke(nameof(DestroyChidori), 1.5f);
+        }
+    }
 
     private void allowMove()
     {

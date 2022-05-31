@@ -49,7 +49,7 @@ public class BossGolem : MonoBehaviour
             simpleAttack.Attack();
         }     
         else if (Vector3.Distance(transform.position, target.position) <= 6f
-            && Vector3.Distance(transform.position, target.position) > 3.7f
+            && Vector3.Distance(transform.position, target.position) > 3.5f
         && ultimate.canUltimate_() && state.CheckState(State.States.IDLE))
         {
             nashAgent.SetDestination(transform.position);
