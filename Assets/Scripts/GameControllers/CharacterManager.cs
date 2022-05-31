@@ -40,7 +40,9 @@ namespace GameControllers
             new CharacterData("Karpov", "Hospital",
                 "Assets/karpov/karpov_prefabs/Karpov_Player.prefab", "Assets/karpov/karpov_prefabs/Karpov_Boss.prefab"),
             new CharacterData("Pufic", "PuficScene",
-                "Assets/Pufic/Prefabs/PuficPlayer.prefab", "Assets/Pufic/Prefabs/BossPufic.prefab")
+                "Assets/Pufic/Prefabs/PuficPlayer.prefab", "Assets/Pufic/Prefabs/BossPufic.prefab"),
+            new CharacterData("Chuck", "MyScene",
+                "Assets/Chuck/Prefabs/Chuck.prefab", "Assets/Chuck/Prefabs/Chuck Boss.prefab")
 
         };
 

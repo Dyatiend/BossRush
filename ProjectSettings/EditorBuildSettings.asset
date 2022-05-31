@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Pufic/Scenes/PuficScene.unity
     guid: 88154c7c5a6510e49b9302898e4254b3
+  - enabled: 1
+    path: Assets/Chuck/MyScene.unity
+    guid: 86a831b7e23a9e24b8d9f7cc3dd2da2f
   m_configObjects: {}
