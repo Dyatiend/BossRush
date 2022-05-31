@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/goo/goo_scene.unity
     guid: ce6dd9d5ceaa38547a76a19a2014771b
+  - enabled: 1
+    path: Assets/karpov/Hospital.unity
+    guid: 1fa163576295f804ead385bce364c766
   m_configObjects: {}

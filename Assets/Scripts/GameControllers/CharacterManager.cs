@@ -36,7 +36,10 @@ namespace GameControllers
             new CharacterData("Liskov", "liskov scene",
                 "Assets/Liskov/Liskov player.prefab", "Assets/Liskov/Liskov boss.prefab"),
             new CharacterData("Goo", "goo_scene",
-                "Assets/goo/goo_player.prefab", "Assets/goo/goo_boss.prefab")
+                "Assets/goo/goo_player.prefab", "Assets/goo/goo_boss.prefab"),
+            new CharacterData("Karpov", "Hospital",
+                "Assets/karpov/karpov_prefabs/Karpov_Player.prefab", "Assets/karpov/karpov_prefabs/Karpov_Boss.prefab")
+
         };
 
         public static CharacterData getByCharName(string charName)
