@@ -35,4 +35,21 @@ public class SwordAttack : Skill
     {
         return 0;
     }
+
+    public override bool BossUseConditions()
+    {
+        bool isReload = base.BossUseConditions();
+
+        if (isReload)
+        {
+            Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+            if (Vector3.Distance(playerPosition, gameObject.transform.position) > 1.3)
+            {
+                isReload = false;
+            }
+        }
+
+        return isReload;
+    }
 }

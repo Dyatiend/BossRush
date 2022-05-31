@@ -34,13 +34,13 @@ public class TrapSetting : Skill
 
     protected override float HoldUpTime()
     {
-        return 0.6f;
+        return 0.3f;
     }
 
     protected override float ActiveTime()
     {
         //return 0.416f;
-        return 0;
+        return 0.3f;
     }
 
     protected override void Action()

@@ -12,9 +12,8 @@ public abstract class CharacterEffect : MonoBehaviour
     public void tryAction(GameObject other)
     {
         //print("effect");
-        if (Random.Range(0.0f, 99.0f) <= chanceToWork)
+        if (Random.Range(0.0f, 100.0f) <= chanceToWork)
         {
-            print("effect");
             action(other);
         }
     }

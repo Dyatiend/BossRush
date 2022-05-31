@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapContiniousEffect : CharacterEffect
+public class TrapSlowdownEffect : CharacterEffect
 {
     protected override void action(GameObject other)
     {
-        if (other.GetComponent<ContiniousDamage>() == null)
+        if (other.GetComponent<Slowdown>() == null)
         {
-            gameObject.AddComponent<ContiniousDamage>();
+            other.AddComponent<Slowdown>();
         }
     }
 }

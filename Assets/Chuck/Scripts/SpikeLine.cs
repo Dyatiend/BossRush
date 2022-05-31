@@ -42,4 +42,21 @@ public class SpikeLine : Skill
     {
         return true;
     }
+
+    public override bool BossUseConditions()
+    {
+        bool isReload = base.BossUseConditions();
+
+        if (isReload)
+        {
+            Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+            if (Vector3.Distance(playerPosition, gameObject.transform.position) > 9)
+            {
+                isReload = false;
+            }
+        }
+
+        return isReload;
+    }
 }
