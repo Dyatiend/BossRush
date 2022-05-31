@@ -30,7 +30,9 @@ namespace GameControllers
             new CharacterData("Peepob", "PeepobScene", 
                 "Assets/Peepob/Prefabs/PeepobPlayerFinal.prefab", "Assets/Peepob/Prefabs/Peepob_Boss.prefab"),
             new CharacterData("Watts", "WattsScene", 
-                "Assets/Watts/WattsPlayer.prefab", "Assets/Watts/WattsBoss.prefab")
+                "Assets/Watts/WattsPlayer.prefab", "Assets/Watts/WattsBoss.prefab"),
+            new CharacterData("Golem", "Golem",
+                "Assets/Golem/Assets/Prefabs/GolemPlayer_.prefab", "Assets/Golem/Assets/Prefabs/GolemBoss_.prefab")
         };
 
         public static CharacterData getByCharName(string charName)
