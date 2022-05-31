@@ -25,7 +25,7 @@ public class SimpleAttack : MonoBehaviour
         state = GetComponent<State>();
         slash.SetActive(false);
         AttackCoolDown2 = AttackCoolDown;
-        canAttack = false;
+        canAttack = true;
     }
 
     void Update()

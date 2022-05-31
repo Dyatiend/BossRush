@@ -45,17 +45,27 @@ public class GolemController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && simpleAttack.canAttack_())
         {
             RotateChar();
-            simpleAttack.Attack();
+            if (state.CheckState(State.States.IDLE))
+            {
+                simpleAttack.Attack();
+            }           
         }
         if (Input.GetKeyDown(KeyCode.Q) && ultimate.canUltimate_())
         {
             RotateChar();
-            ultimate.Attack();
+            if (state.CheckState(State.States.IDLE))
+            {
+                ultimate.Attack();
+            }
+                
         }
         if (Input.GetKeyDown(KeyCode.E) && ability.canAbility_())
         {
             RotateChar();
-            ability.Attack();
+            if (state.CheckState(State.States.IDLE))
+            {
+                ability.Attack();
+            }          
         }
     }
 

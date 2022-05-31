@@ -8,6 +8,9 @@ public class Tornado : MonoBehaviour
     private Collider collider;
     private Light light;
 
+    public string target;
+    public int damage;
+
     void Start()
     {
         Destroy(gameObject, 7f);
@@ -43,5 +46,13 @@ public class Tornado : MonoBehaviour
         light.intensity = 4;
         yield return new WaitForSeconds(0.2f);
         light.intensity = 2;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (collider.tag == target)
+        {
+            collider.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 }

@@ -21,7 +21,7 @@ public class SpellAttack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         state = GetComponent<State>();
-        canAbility = false;
+        canAbility = true;
         AbilityCoolDown2 = AbilityCoolDown;
     }
 

@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 1754869560}
   - component: {fileID: 5064062689573260940}
   m_Layer: 0
-  m_Name: TornadoNew
+  m_Name: TornadoNewBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9654,7 +9654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fd0cd71dd2f8e459ddfd936ac7e19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: Boss
+  target: Player
   damage: 1
 --- !u!1 &6890896258527693746
 GameObject:

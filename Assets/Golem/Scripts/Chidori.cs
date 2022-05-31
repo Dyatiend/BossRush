@@ -18,6 +18,7 @@ public class Chidori : MonoBehaviour
     private bool lighting;
     public string owner;
     public string target;
+    public int damage;
 
     void Start()
     {
@@ -63,7 +64,7 @@ public class Chidori : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "TornadoNew(Clone)" || other.gameObject.tag == owner)
+        if(other.name == "TornadoNew(Clone)" || other.gameObject.tag == owner || other.name == "Chidori(Clone)")
         {
             return;
         }
@@ -71,8 +72,7 @@ public class Chidori : MonoBehaviour
         {
             if (other.gameObject.tag == target)
             {
-                other.gameObject.GetComponent<Health>().TakeDamage(25);
-                Debug.Log("-25 to " + target);
+                other.gameObject.GetComponent<Health>().TakeDamage(damage);
             }
             canMove = false;
             //Debug.Log(other.name);
