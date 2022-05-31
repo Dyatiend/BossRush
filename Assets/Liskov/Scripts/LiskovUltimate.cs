@@ -22,7 +22,7 @@ public class LiskovUltimate : Skill
 
     protected override float ActiveTime()
     {
-        return 4.4f;
+        return 9f;
     }
 
     protected override float ReloadTime()
