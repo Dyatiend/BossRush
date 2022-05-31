@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/karpov/Hospital.unity
     guid: 1fa163576295f804ead385bce364c766
+  - enabled: 1
+    path: Assets/Pufic/Scenes/PuficScene.unity
+    guid: 88154c7c5a6510e49b9302898e4254b3
   m_configObjects: {}
