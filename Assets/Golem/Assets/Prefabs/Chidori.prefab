@@ -48,7 +48,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6f4bda99494481a4c8eb97b4350ef8f8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.38
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   electricity: {fileID: 4368970893886898689}
   owner: Player
   target: Boss
-  damage: 100
+  damage: 250
 --- !u!1 &8485412717870836345
 GameObject:
   m_ObjectHideFlags: 0
