@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Golem/Scene/Golem.unity
     guid: 47de7ef41fc995d44b1bb647c0df3f43
+  - enabled: 1
+    path: Assets/Liskov/liskov scene.unity
+    guid: 143200808b5f51048857c7d6688893e9
   m_configObjects: {}

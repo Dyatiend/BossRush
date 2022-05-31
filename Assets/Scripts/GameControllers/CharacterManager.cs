@@ -32,7 +32,9 @@ namespace GameControllers
             new CharacterData("Watts", "WattsScene", 
                 "Assets/Watts/WattsPlayer.prefab", "Assets/Watts/WattsBoss.prefab"),
             new CharacterData("Golem", "Golem",
-                "Assets/Golem/Assets/Prefabs/GolemPlayer_.prefab", "Assets/Golem/Assets/Prefabs/GolemBoss_.prefab")
+                "Assets/Golem/Assets/Prefabs/GolemPlayer_.prefab", "Assets/Golem/Assets/Prefabs/GolemBoss_.prefab"),
+            new CharacterData("Liskov", "liskov scene",
+                "Assets/Liskov/Liskov player.prefab", "Assets/Liskov/Liskov boss.prefab")
         };
 
         public static CharacterData getByCharName(string charName)
