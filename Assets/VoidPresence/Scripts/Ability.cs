@@ -13,6 +13,11 @@ public class Ability : MonoBehaviour
     public float timeBeforeAttack;
     public float timeBetweenAttacks;
 
+    public float minAttackRange = -180;
+    public float maxAttackRange = 180;
+
+    public int attackCount = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +45,10 @@ public class Ability : MonoBehaviour
 
     public void CreateAbilityEffect()
     {
-        Instantiate(ability, abilityPoint.position, abilityPoint.rotation);
+        for (int i = 0; i < attackCount; ++i)
+        {
+            float rot = Random.Range(minAttackRange, maxAttackRange);
+            Instantiate(ability, abilityPoint.position, Quaternion.Euler(abilityPoint.rotation.eulerAngles + new Vector3(0, rot, 0)));
+        }
     }
 }

@@ -1794,7 +1794,7 @@ MonoBehaviour:
   timeBeforeAttack: 0.75
   timeBetweenAttacks: 3.25
   ultimateRange: 5
-  effectsCount: 3
+  effectsCount: 30
 --- !u!114 &1141540231932569117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1811,8 +1811,9 @@ MonoBehaviour:
   projectilePoint: {fileID: 8014131667581866800}
   timeBeforeAttack: 0.85
   timeBetweenAttacks: 2.25
-  minAttackRange: 5
-  maxAttackRange: 25
+  minAttackRange: -180
+  maxAttackRange: 180
+  attackCount: 50
 --- !u!114 &3763237906908587928
 MonoBehaviour:
   m_ObjectHideFlags: 0

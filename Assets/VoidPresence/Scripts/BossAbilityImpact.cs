@@ -14,11 +14,16 @@ public class BossAbilityImpact : MonoBehaviour
         {
             collider.GetComponent<Health>().TakeDamage(dealingDamage);
             collider.GetComponent<Locomotion>().Slow(slowing, slowingTime);
+            Hit(collider);
         }
-        if (collider.tag != ("Boss"))
+    }
+
+    public void Hit(Collider collider)
+    {
+        if (collider.tag != ("Boss") && collider.tag != ("AbilityObject"))
         {
             GetComponent<ProjectileHit>().PlayHitAnim();
-            GetComponent<ProjectileTranslate>().speed = 0f;
+            GetComponent<MyProjectileTranslate>().speed = 0f;
         }
     }
 }

@@ -29161,10 +29161,10 @@ GameObject:
   - component: {fileID: -9069305652056465599}
   - component: {fileID: 8081460039877550620}
   - component: {fileID: 4278566571202512476}
-  - component: {fileID: 2032862466785559811}
+  - component: {fileID: -9100045199313090564}
   m_Layer: 0
   m_Name: PlayerAttack
-  m_TagString: Untagged
+  m_TagString: AbilityObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29245,7 +29245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dealingDamage: 5
---- !u!114 &2032862466785559811
+--- !u!114 &-9100045199313090564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29254,7 +29254,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8554603005536856708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d98ae6d42f154cd99ce0b1f92f4a2fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 11d497e14c8a38f49ac502a303de982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20

@@ -29161,10 +29161,10 @@ GameObject:
   - component: {fileID: -9069305652056465599}
   - component: {fileID: 8081460039877550620}
   - component: {fileID: 7547907906672915535}
-  - component: {fileID: 3149073380504388044}
+  - component: {fileID: 1054208048902982994}
   m_Layer: 0
   m_Name: BossAttack
-  m_TagString: Untagged
+  m_TagString: AbilityObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29244,8 +29244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a81ddadc251ff149b1b767efdff6c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dealingDamage: 10
---- !u!114 &3149073380504388044
+  dealingDamage: 75
+--- !u!114 &1054208048902982994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29254,7 +29254,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8554603005536856708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d98ae6d42f154cd99ce0b1f92f4a2fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 11d497e14c8a38f49ac502a303de982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 50

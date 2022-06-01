@@ -87,6 +87,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3848235172794716615, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
+      propertyPath: attackCount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848235172794716615, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
+      propertyPath: maxAttackRange
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848235172794716615, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
+      propertyPath: minAttackRange
+      value: -180
+      objectReference: {fileID: 0}
     - target: {fileID: 4604165275457180268, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
       propertyPath: m_Name
       value: VoidPresencePlayer

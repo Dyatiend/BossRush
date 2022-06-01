@@ -16,6 +16,8 @@ public class Attack : MonoBehaviour
     public float minAttackRange;
     public float maxAttackRange;
 
+    public int attackCount = 30;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,10 +45,10 @@ public class Attack : MonoBehaviour
 
     public void CreateProjectiles()
     {
-        float right = Random.Range(minAttackRange, maxAttackRange);
-        float left = -Random.Range(minAttackRange, maxAttackRange);
-        Instantiate(projectile, projectilePoint.position, projectilePoint.rotation);
-        Instantiate(projectile, projectilePoint.position, Quaternion.Euler(projectilePoint.rotation.eulerAngles + new Vector3(0, right, 0)));
-        Instantiate(projectile, projectilePoint.position, Quaternion.Euler(projectilePoint.rotation.eulerAngles + new Vector3(0, left, 0)));
+        for (int i = 0; i < attackCount; ++i)
+        {
+            float rot = Random.Range(minAttackRange, maxAttackRange);
+            Instantiate(projectile, projectilePoint.position, Quaternion.Euler(projectilePoint.rotation.eulerAngles + new Vector3(0, rot, 0)));
+        }
     }
 }

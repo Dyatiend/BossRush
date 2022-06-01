@@ -130,7 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f638b35ffc4be304da00341bb07028be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1253474123787822972}
+  cameraRelativePosition: {x: 0, y: 0, z: 0}
+  cameraRotation: {x: 0, y: 0, z: 0}
 --- !u!1001 &1382567535223534157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,6 +281,18 @@ PrefabInstance:
     - target: {fileID: 3796137837194119382, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848235172794716615, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
+      propertyPath: attackCount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848235172794716615, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
+      propertyPath: maxAttackRange
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848235172794716615, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
+      propertyPath: minAttackRange
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 4604165275457180268, guid: a83fe278b5fb7034ab80c5c8108d73bd, type: 3}
       propertyPath: m_Name

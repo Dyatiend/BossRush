@@ -10629,6 +10629,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187778159270486802, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 394911860150048356, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.680625
@@ -10688,6 +10692,10 @@ PrefabInstance:
     - target: {fileID: 1862401882985523706, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
       propertyPath: m_LocalPosition.z
       value: -14.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309631396749444009, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2905236280180297401, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
       propertyPath: m_RootOrder
@@ -10762,8 +10770,20 @@ PrefabInstance:
       value: SpawnController
       objectReference: {fileID: 0}
     - target: {fileID: 5038127987789977322, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038127987789977322, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924526575832197992, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491194592490278327, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0547360fceeaf0141964f32e93fa4562, type: 3}
@@ -10774,6 +10794,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4684642994732953324, guid: fb20414946578fe4a8cbec1c926fe11b, type: 3}
+      propertyPath: effectsCount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7203089359649319777, guid: fb20414946578fe4a8cbec1c926fe11b, type: 3}
       propertyPath: healthPoints
       value: 1000

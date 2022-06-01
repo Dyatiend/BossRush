@@ -11,11 +11,16 @@ public class PlayerAttackImpact : MonoBehaviour
         if (collider.tag == ("Boss"))
         {
             collider.GetComponent<Health>().TakeDamage(dealingDamage);
+            Hit(collider);
         }
-        if (collider.tag != ("Player"))
+    }
+
+    public void Hit(Collider collider)
+    {
+        if (collider.tag != ("Player") && collider.tag != ("AbilityObject"))
         {
             GetComponent<ProjectileHit>().PlayHitAnim();
-            GetComponent<ProjectileTranslate>().speed = 0f;
+            GetComponent<MyProjectileTranslate>().speed = 0f;
         }
     }
 }
