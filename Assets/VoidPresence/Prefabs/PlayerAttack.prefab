@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8554603003982309499}
   - component: {fileID: 8554603003982309500}
   - component: {fileID: 8554603003982309501}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4888,7 +4888,7 @@ GameObject:
   - component: {fileID: 8554603004134419638}
   - component: {fileID: 8554603004134419636}
   - component: {fileID: 8554603004134419637}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9762,7 +9762,7 @@ GameObject:
   - component: {fileID: 8554603004242883066}
   - component: {fileID: 8554603004242883064}
   - component: {fileID: 8554603004242883065}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14563,7 +14563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8554603004653196487}
   - component: {fileID: 8554603004653196486}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14702,7 +14702,7 @@ GameObject:
   - component: {fileID: 8554603004845675072}
   - component: {fileID: 8554603004845675074}
   - component: {fileID: 8554603004845675073}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19465,7 +19465,7 @@ GameObject:
   - component: {fileID: 8554603005323690511}
   - component: {fileID: 8554603005323690509}
   - component: {fileID: 8554603005323690510}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24330,7 +24330,7 @@ GameObject:
   - component: {fileID: 8554603005337688556}
   - component: {fileID: 8554603005337688554}
   - component: {fileID: 8554603005337688555}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ImpactShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29162,7 +29162,7 @@ GameObject:
   - component: {fileID: 8081460039877550620}
   - component: {fileID: 4278566571202512476}
   - component: {fileID: -9100045199313090564}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerAttack
   m_TagString: AbilityObject
   m_Icon: {fileID: 0}

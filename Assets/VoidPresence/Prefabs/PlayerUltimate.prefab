@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 40475781623094387}
   - component: {fileID: 170754122635426079}
   - component: {fileID: 170514880899649137}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fire_ADD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4827,7 +4827,7 @@ GameObject:
   - component: {fileID: 40470958798412739}
   - component: {fileID: 170234092614672953}
   - component: {fileID: 170334997704599015}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9643,7 +9643,7 @@ GameObject:
   - component: {fileID: 41067264556787641}
   - component: {fileID: 170844982547940577}
   - component: {fileID: 169896516270529395}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14459,7 +14459,7 @@ GameObject:
   - component: {fileID: 40579257016742089}
   - component: {fileID: 170808560616534467}
   - component: {fileID: 170429511851936397}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fire_ALPHA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19276,7 +19276,7 @@ GameObject:
   - component: {fileID: 1416063343060838472}
   - component: {fileID: 8250619646163606061}
   - component: {fileID: 680023375313267422}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerUltimate
   m_TagString: AbilityObject
   m_Icon: {fileID: 0}

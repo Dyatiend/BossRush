@@ -401,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealhPoints: 100
   healthPoints: 0
-  deathTime: 10
+  deathTime: 3
 --- !u!114 &653868513
 MonoBehaviour:
   m_ObjectHideFlags: 0

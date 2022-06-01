@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242e03ab05f3587499e3c0362b15013b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealhPoints: 1000
+  maxHealhPoints: 100
   healthPoints: 1000
   deathTime: 5
 --- !u!195 &7203089359649319780
@@ -1830,6 +1830,9 @@ MonoBehaviour:
   abilityPoint: {fileID: 8014131665759128862}
   timeBeforeAttack: 1.35
   timeBetweenAttacks: 2.75
+  minAttackRange: -180
+  maxAttackRange: 180
+  attackCount: 100
 --- !u!114 &8362827789514014047
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 19159934597880988}
   - component: {fileID: 185937870386746278}
   - component: {fileID: 186666227261620660}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4831,7 +4831,7 @@ GameObject:
   - component: {fileID: 25566294041193246}
   - component: {fileID: 185821369908587028}
   - component: {fileID: 186761167188431194}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fire_ALPHA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9647,7 +9647,7 @@ GameObject:
   - component: {fileID: 25641176333483118}
   - component: {fileID: 185782750842363702}
   - component: {fileID: 185044564419444900}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14463,7 +14463,7 @@ GameObject:
   - component: {fileID: 19482149221629972}
   - component: {fileID: 186395771430664686}
   - component: {fileID: 186855614856101424}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19279,7 +19279,7 @@ GameObject:
   - component: {fileID: 19477249280542628}
   - component: {fileID: 185875801263645384}
   - component: {fileID: 186675734008698278}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fire_ADD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24095,7 +24095,7 @@ GameObject:
   - component: {fileID: 376036189692858424}
   - component: {fileID: 376036189678703992}
   - component: {fileID: 376036189678611672}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28902,7 +28902,7 @@ GameObject:
   - component: {fileID: 1065832339273994311}
   - component: {fileID: 1065832339273994309}
   - component: {fileID: 1065832339273994310}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28961,7 +28961,7 @@ GameObject:
   - component: {fileID: 1065832339932373465}
   - component: {fileID: 1065832339932373463}
   - component: {fileID: 1065832339932373464}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29021,7 +29021,7 @@ GameObject:
   - component: {fileID: 5450763645464829156}
   - component: {fileID: 5450763645483178404}
   - component: {fileID: 5450763645483147268}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33895,7 +33895,7 @@ GameObject:
   - component: {fileID: 5450763645464829158}
   - component: {fileID: 5450763645483178406}
   - component: {fileID: 5450763645483147270}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38639,7 +38639,7 @@ GameObject:
   - component: {fileID: 5450763645464829162}
   - component: {fileID: 5399174948109869529}
   - component: {fileID: 5450763645464920265}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BossUltimate
   m_TagString: AbilityObject
   m_Icon: {fileID: 0}
@@ -38710,7 +38710,7 @@ GameObject:
   - component: {fileID: 5934636394459546324}
   - component: {fileID: 5934636394477897620}
   - component: {fileID: 5934636394477813300}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pulse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
